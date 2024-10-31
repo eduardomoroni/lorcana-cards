@@ -1,0 +1,5 @@
+    Sitemap: https://lorcanito.com/sitemaps.txt
+
+    User-agent: *
+    Allow: /
+    Disallow: /authentication/

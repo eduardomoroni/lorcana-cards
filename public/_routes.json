@@ -1,0 +1,16 @@
+{
+  "include": ["/*"],
+  "exclude": [
+    "/assets/*",
+    "/build/*",
+    "/_headers",
+    "/_redirects",
+    "/_routes.json",
+    "/favicon.ico",
+    "/manifest.json",
+    "/q-manifest.json",
+    "/robots.txt",
+    "/service-worker.js"
+  ],
+  "version": 1
+}
