@@ -6,17 +6,17 @@ const joinImages = require("join-images").joinImages;
 // Directory containing images
 const imagesDir = path.join(
   __dirname,
-  "../../../card-database/public/assets/images/sleeves/process",
+  "../public/assets/images/sleeves/process",
 );
 
 // Output directories for converted images
 const outputDirAvif = path.join(
   __dirname,
-  "../../../card-database/public/assets/images/sleeves/sleeves-avif",
+  "..//public/assets/images/sleeves/sleeves-avif",
 );
 const outputDirWebp = path.join(
   __dirname,
-  "../../../card-database/public/assets/images/sleeves/sleeves-webp",
+  "../public/assets/images/sleeves/sleeves-webp",
 );
 
 const trimOptions = {

@@ -5,17 +5,17 @@ const path = require("path");
 // Directory containing images
 const imagesDir = path.join(
   __dirname,
-  "../../../card-database/public/assets/images/playmats",
+  "../public/assets/images/playmats/process",
 );
 
 // Output directories for converted images
 const outputDirAvif = path.join(
   __dirname,
-  "../../../card-database/public/assets/images/playmats-avif",
+  "../public/assets/images/playmats-avif",
 );
 const outputDirWebp = path.join(
   __dirname,
-  "../../../card-database/public/assets/images/playmats-webp",
+  "../public/assets/images/playmats-webp",
 );
 
 if (!fs.existsSync(outputDirAvif)) fs.mkdirSync(outputDirAvif);
