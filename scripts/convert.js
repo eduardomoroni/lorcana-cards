@@ -9,10 +9,10 @@ const { languages, edition, rootFolder } = require("./shared.js");
 const dirs = [
   `${rootFolder}/${edition}/art_only/`, // given the card is art_only, we do not store one for each language
 ];
-// languages.forEach((language) => {
-//   dirs.push(`${rootFolder}/${language}/${edition}/`);
-//   dirs.push(`${rootFolder}/${language}/${edition}/art_and_name/`);
-// });
+languages.forEach((language) => {
+  dirs.push(`${rootFolder}/${language}/${edition}/`);
+  dirs.push(`${rootFolder}/${language}/${edition}/art_and_name/`);
+});
 
 try {
   dirs.forEach((sourceFolder) => {
