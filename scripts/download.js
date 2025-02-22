@@ -16,6 +16,8 @@ export async function program() {
   }
 }
 
+const errors = []
+
 export async function downloadImage(cardNumber, language, edition) {
   const cardNumberPadded = cardNumber.toString().padStart(3, "0");
   const editionPadded = edition.toString().padStart(3, "0");
@@ -34,6 +36,10 @@ export async function downloadImage(cardNumber, language, edition) {
     // put errors in a log file
     await download(url, destination).catch(console.error);
   }
+
+  if (errors.length) {
+    fs.writeFileSync("errors.log", errors.join("\n"));
+  }
 }
 
 function download(url, filepath) {
@@ -50,6 +56,7 @@ function download(url, filepath) {
         // Consume response data to free up memory
         res.resume();
         console.log(`Downloading failed ${url}`);
+        errors.push(url);
         reject(
           new Error(`Request Failed With a Status Code: ${res.statusCode}`),
         );
