@@ -1,3 +1,3 @@
-export const edition = "001";
-export const languages = ["JA", "ZH"];
+export const edition = "007";
+export const languages = ["EN"];
 export const rootFolder = `./public/assets/images/cards`;

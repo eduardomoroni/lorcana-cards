@@ -8,16 +8,6 @@ const fs = require("fs");
 const path = require("path");
 const { rootFolder, languages, edition } = require("./shared.js");
 
-async function main() {
-  // await Promise.all(languages.map((language) => program(language, false)));
-  // WHen the image only contains the art, the language doesn't matter
-  // await program("EN", true);
-
-  await deleteFilesRecursively(rootFolder);
-}
-
-main();
-
 async function program(language, artOnly) {
   const sourceFolder = `${rootFolder}/${language}/${edition}/`;
   const destinationFolder = artOnly
@@ -32,7 +22,8 @@ async function program(language, artOnly) {
     if (
       file.endsWith(".webp") &&
       !file.endsWith("_top.webp") &&
-      !file.endsWith("_bottom.webp")
+      !file.endsWith("_bottom.webp") &&
+      !file.endsWith(".avif")
     ) {
       const sourceFile = path.join(sourceFolder, file);
       const destinationFile = path.join(destinationFolder, file);
@@ -124,3 +115,15 @@ function deleteFilesRecursively(folder) {
     }
   });
 }
+
+async function main() {
+    program("EN", true);
+
+  // languages.forEach((language) => {
+  //   program(language, false);
+  // });
+
+  // await deleteFilesRecursively(rootFolder);
+}
+
+main();

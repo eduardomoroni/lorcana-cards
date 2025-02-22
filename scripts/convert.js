@@ -9,20 +9,27 @@ const { languages, edition, rootFolder } = require("./shared.js");
 const dirs = [
   `${rootFolder}/${edition}/art_only/`, // given the card is art_only, we do not store one for each language
 ];
-languages.forEach((language) => {
-  dirs.push(`${rootFolder}/${language}/${edition}/`);
-  dirs.push(`${rootFolder}/${language}/${edition}/art_and_name/`);
-});
+// languages.forEach((language) => {
+//   dirs.push(`${rootFolder}/${language}/${edition}/`);
+//   dirs.push(`${rootFolder}/${language}/${edition}/art_and_name/`);
+// });
 
 try {
   dirs.forEach((sourceFolder) => {
     fs.readdir(sourceFolder, async (err, files) => {
+      console.log("Reading files from " + sourceFolder);
+      if (err) {
+        console.error("Error reading files: ", err);
+        return;
+      }
+
       console.log(
         "Found " + files.length + " files. Converting now, please be patient..",
       );
 
       for (const file of files) {
         const filePath = path.join(sourceFolder, file);
+        console.log("Processing file " + filePath);
         if (fs.statSync(filePath).isDirectory()) {
           console.log("Skipping directory " + filePath);
           continue;
@@ -40,7 +47,7 @@ try {
 
         if (file.endsWith(".webp") && !file.endsWith("_2x.webp")) {
           await convert();
-          return;
+          continue;
         }
 
         async function convert() {
