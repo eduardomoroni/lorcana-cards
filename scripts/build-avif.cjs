@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const directory = path.join(__dirname, 'public');
+const directory = path.join(__dirname, '../public');
 
 fs.readdir(directory, (err, files) => {
     if (err) throw err;

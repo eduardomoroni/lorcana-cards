@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "build-avif": "node build-avif.js",
+    "build-avif": "node scripts/build-avif.cjs",
     "deploy-s3": "aws s3 cp ./public s3://lorcanito-images --recursive --cache-control \"max-age=31536000, immutable\""
   },
   "devDependencies": {
