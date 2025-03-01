@@ -3,15 +3,22 @@ const path = require('path');
 
 const directory = path.join(__dirname, '../public');
 
-fs.readdir(directory, (err, files) => {
-    if (err) throw err;
+function deleteNonAvifFiles(dir) {
+    fs.readdir(dir, { withFileTypes: true }, (err, files) => {
+        if (err) throw err;
 
-    files.forEach(file => {
-        if (path.extname(file) === '.webp') {
-            fs.unlink(path.join(directory, file), err => {
-                if (err) throw err;
-                console.log(`Deleted: ${file}`);
-            });
-        }
+        files.forEach(file => {
+            const filePath = path.join(dir, file.name);
+            if (file.isDirectory()) {
+                deleteNonAvifFiles(filePath);
+            } else if (path.extname(file.name) !== '.webp') {
+                fs.unlink(filePath, err => {
+                    if (err) throw err;
+                    console.log(`Deleted: ${filePath}`);
+                });
+            }
+        });
     });
-});
+}
+
+deleteNonAvifFiles(directory);
