@@ -11,12 +11,14 @@ languages.forEach((language) => {
   dirs.push(`${rootFolder}/${language}/${edition}/art_and_name/`);
 });
 
+async function program() {
 for (const sourceFolder of dirs) {
+  console.log("Reading files from " + sourceFolder);
   const files = fs.readdirSync(sourceFolder);
 
   for (const file of files) {
     const dir = sourceFolder;
-
+console.log("Processing file " + file);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
@@ -58,6 +60,8 @@ for (const sourceFolder of dirs) {
     }
   }
 }
+}
+
 
 // I'd like to use sharp JS to change image's resolution
 // taking half of height and half of width
@@ -74,3 +78,5 @@ async function resizeImage(from, to) {
 
   return resize;
 }
+
+program();
