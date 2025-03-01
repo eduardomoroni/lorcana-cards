@@ -11,7 +11,7 @@ function deleteNonAvifFiles(dir) {
             const filePath = path.join(dir, file.name);
             if (file.isDirectory()) {
                 deleteNonAvifFiles(filePath);
-            } else if (path.extname(file.name) !== '.webp') {
+            } else if (path.extname(file.name) === '.webp') {
                 fs.unlink(filePath, err => {
                     if (err) throw err;
                     console.log(`Deleted: ${filePath}`);
