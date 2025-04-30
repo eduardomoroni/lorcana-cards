@@ -117,7 +117,7 @@ function deleteFilesRecursively(folder) {
 }
 
 async function main() {
-    program("EN", true);
+    program("EN", false);
 
   // languages.forEach((language) => {
   //   program(language, false);
