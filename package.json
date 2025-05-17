@@ -5,7 +5,8 @@
   "scripts": {
     "delete-webp": "node scripts/delete-webp.cjs",
     "delete-avif": "node scripts/delete-avif.cjs",
-    "deploy-s3": "aws s3 cp ./public s3://lorcanito-images --recursive --cache-control \"max-age=31536000, immutable\""
+    "deploy-s3": "aws s3 cp ./public s3://lorcanito-images --recursive --cache-control \"max-age=31536000, immutable\"",
+    "sync-s3": "aws s3 sync ./public s3://lorcanito-images --cache-control \"max-age=31536000, immutable\"",
   },
   "devDependencies": {
     "@types/bun": "latest"
