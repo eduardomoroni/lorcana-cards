@@ -117,13 +117,13 @@ function deleteFilesRecursively(folder) {
 }
 
 async function main() {
-    program("EN", true);
 
-  // languages.forEach((language) => {
-  //   program(language, false);
-  // });
 
-  // await deleteFilesRecursively(rootFolder);
+  languages.forEach((language) => {
+    program(language, false);
+  });
+
+  await deleteFilesRecursively(rootFolder);
 }
 
 main();
