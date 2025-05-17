@@ -6,7 +6,7 @@ const { edition, languages, rootFolder } = require("./shared.js");
 
 export async function program() {
   try {
-    for (let i = 205; i <= 229; i++) {
+    for (let i = 1; i <= 230; i++) {
       for (const language of languages) {
         await downloadImage(i, language, edition);
       }

@@ -1,5 +1,5 @@
 // Make sure you've downloaded the assets
-// next step is to convert the images to avif format
+// next step is to convert.js the images to avif format
 // git clean -f -X -e '*_top.webp' -e '*_bottom.webp' sometimes is needed
 
 const sharp = require("sharp");
@@ -117,7 +117,7 @@ function deleteFilesRecursively(folder) {
 }
 
 async function main() {
-    program("EN", false);
+    program("EN", true);
 
   // languages.forEach((language) => {
   //   program(language, false);
