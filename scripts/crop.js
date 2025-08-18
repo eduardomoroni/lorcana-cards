@@ -120,7 +120,7 @@ async function main() {
 
 
   languages.forEach((language) => {
-    program(language, false);
+    program(language, true);
   });
 
   await deleteFilesRecursively(rootFolder);
