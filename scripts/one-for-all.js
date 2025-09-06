@@ -5,7 +5,7 @@ const { downloadImage } = require("./download.js");
 // In this script I try to do all the image manipulation in one script
 
 // First I will check card cards are missing images
-const setNumber = "006";
+const setNumber = "008";
 const pathToCards = path.join(
   __dirname,
   `../../../simulator/engine/src/cards/${setNumber}/index.ts`,
