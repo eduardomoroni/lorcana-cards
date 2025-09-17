@@ -249,49 +249,64 @@ class PipelineVerifier {
       fs.mkdirSync(destinationFolder, { recursive: true });
     }
 
-    // Copy source to destination first
-    fs.copyFileSync(sourceFile, destinationFile);
-
+    // Create temporary files for safe cropping
+    const tempDestination = destinationFile.replace(".webp", "_temp_dest.webp");
     const topFile = destinationFile.replace(".webp", "_top.webp");
     const bottomFile = destinationFile.replace(".webp", "_bottom.webp");
 
-    const metadata = await sharp(destinationFile).metadata();
+    try {
+      const metadata = await sharp(sourceFile).metadata();
 
-    // Create top crop
-    const startHeight = 0;
-    const endHeight = Math.floor(metadata.height * (artOnly ? 0.52 : 0.674));
-    
-    await sharp(destinationFile)
-      .extract({
-        left: 0,
-        top: startHeight,
-        width: metadata.width,
-        height: endHeight - startHeight,
-      })
-      .toFile(topFile);
+      // Create top crop from source
+      const startHeight = 0;
+      const endHeight = Math.floor(metadata.height * (artOnly ? 0.52 : 0.674));
 
-    // Create bottom crop
-    const bottomStartHeight = Math.floor(metadata.height * (artOnly ? 0.931 : 0.925));
-    const bottomEndHeight = Math.floor(metadata.height);
+      await sharp(sourceFile)
+        .extract({
+          left: 0,
+          top: startHeight,
+          width: metadata.width,
+          height: endHeight - startHeight,
+        })
+        .toFile(topFile);
 
-    await sharp(destinationFile)
-      .extract({
-        left: 0,
-        top: bottomStartHeight,
-        width: metadata.width,
-        height: bottomEndHeight - bottomStartHeight,
-      })
-      .toFile(bottomFile);
+      // Create bottom crop from source
+      const bottomStartHeight = Math.floor(metadata.height * (artOnly ? 0.931 : 0.925));
+      const bottomEndHeight = Math.floor(metadata.height);
 
-    // Join images
-    const joinedImage = await joinImages([topFile, bottomFile], { direction: "vertical" });
-    await joinedImage.toFile(destinationFile);
+      await sharp(sourceFile)
+        .extract({
+          left: 0,
+          top: bottomStartHeight,
+          width: metadata.width,
+          height: bottomEndHeight - bottomStartHeight,
+        })
+        .toFile(bottomFile);
 
-    // Clean up temporary files
-    fs.unlinkSync(topFile);
-    fs.unlinkSync(bottomFile);
+      // Join images to temporary destination
+      const joinedImage = await joinImages([topFile, bottomFile], { direction: "vertical" });
+      await joinedImage.toFile(tempDestination);
 
-    this.log(`Successfully cropped ${destinationFile}`, 'FIX');
+      // Only move to final destination if cropping was successful
+      fs.renameSync(tempDestination, destinationFile);
+
+      this.log(`Successfully cropped ${destinationFile}`, 'FIX');
+    } catch (error) {
+      // Clean up any partial files on error
+      [tempDestination, topFile, bottomFile].forEach(file => {
+        if (fs.existsSync(file)) {
+          fs.unlinkSync(file);
+        }
+      });
+      throw error;
+    } finally {
+      // Clean up temporary files
+      [topFile, bottomFile].forEach(file => {
+        if (fs.existsSync(file)) {
+          fs.unlinkSync(file);
+        }
+      });
+    }
   }
 
   async convertToAvif(webpPath, avifPath) {
