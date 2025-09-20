@@ -10,9 +10,9 @@ import { rootFolder, languages, edition } from "./shared.js";
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
-  edition: "008", // Override from shared.js if needed
+  edition: "007", // Override from shared.js if needed
   language: "EN", // Single language focus
-  cardRange: { start: 1, end: 224 }, // Based on analysis of existing files
+  cardRange: { start: 1, end: 222 }, // Based on analysis of existing files
   verbose: true
 };
 
