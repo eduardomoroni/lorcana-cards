@@ -6,3 +6,5 @@ errors.log
 fix-dimensions-output.log
 validation-report-*.json
 pipeline-report-*.json
+audit-report-*.json
+audit-report-*.csv

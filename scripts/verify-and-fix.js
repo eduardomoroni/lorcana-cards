@@ -10,11 +10,13 @@ import { rootFolder, languages, edition } from "./shared.js";
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
-  edition: "010", // Override from shared.js if needed
-  language: "EN", // Single language focus
-  cardRange: { start: 1, end: 242 }, // Based on analysis of existing files
-  verbose: true, // Set to false for cleaner output
-  skipVariants: false // Set to true for editions that only have original files (like 010)
+  edition: "009", // Override from shared.js if needed
+  languages: ["EN", "DE", "FR", "IT"], // Languages to process
+  cardRange: { start: 1, end: 251 }, // Based on analysis of existing files
+  verbose: false, // Set to false for cleaner output
+  skipVariants: false, // Set to true for editions that only have original files (like 010)
+  autoFix: true, // Automatically attempt to fix issues
+  downloadSource: "dreamborn" // "dreamborn" or "ravensburg"
 };
 
 // Pipeline steps enum
@@ -40,8 +42,20 @@ class PipelineVerifier {
       checked: 0,
       missing: 0,
       recovered: 0,
-      failed: 0
+      failed: 0,
+      byLanguage: {}
     };
+    
+    // Initialize language stats
+    const langs = Array.isArray(config.languages) ? config.languages : [config.language];
+    langs.forEach(lang => {
+      this.stats.byLanguage[lang] = {
+        checked: 0,
+        missing: 0,
+        recovered: 0,
+        failed: 0
+      };
+    });
   }
 
   log(message, type = 'INFO') {
@@ -119,98 +133,131 @@ class PipelineVerifier {
     }
   }
 
-  async verifyCard(cardNum) {
+  async verifyCard(cardNum, language) {
     const cardNumber = this.getCardNumber(cardNum);
-    this.log(`\n=== VERIFYING CARD ${cardNumber} ===`, 'INFO');
+    if (this.config.verbose) {
+      this.log(`\n=== VERIFYING CARD ${cardNumber} (${language}) ===`, 'INFO');
+    }
     
-    const paths = this.getFilePaths(cardNum);
+    const paths = this.getFilePaths(cardNum, language);
     const issues = [];
 
     // Check Step 1: Original Download
-    this.log(`Step 1: Checking original download for card ${cardNumber}`, 'INFO');
+    if (this.config.verbose) {
+      this.log(`Step 1: Checking original download for card ${cardNumber} (${language})`, 'INFO');
+    }
     const originalExists = this.checkFileExists(paths.originalWebp);
     if (!originalExists) {
-      issues.push({ step: PIPELINE_STEPS.DOWNLOAD, path: paths.originalWebp });
-      this.log(`MISSING: Original webp file for card ${cardNumber}`, 'ERROR');
+      issues.push({ step: PIPELINE_STEPS.DOWNLOAD, path: paths.originalWebp, language });
+      if (this.config.verbose) {
+        this.log(`MISSING: Original webp file for card ${cardNumber} (${language})`, 'ERROR');
+      }
     }
 
     // Check Step 2: Art Only Variants (only if original exists and variants are not skipped)
-    if (originalExists && !this.config.skipVariants) {
-      this.log(`Step 2: Checking art_only variants for card ${cardNumber}`, 'INFO');
+    // Note: art_only is shared across languages, so only check once per card
+    if (originalExists && !this.config.skipVariants && language === this.getCurrentLanguages()[0]) {
+      if (this.config.verbose) {
+        this.log(`Step 2: Checking art_only variants for card ${cardNumber}`, 'INFO');
+      }
       const artOnlyWebpExists = this.checkFileExists(paths.artOnlyWebp);
       const artOnlyAvifExists = this.checkFileExists(paths.artOnlyAvif);
       
       if (!artOnlyWebpExists) {
-        issues.push({ step: PIPELINE_STEPS.CROP_ART_ONLY, path: paths.artOnlyWebp });
-        this.log(`MISSING: Art only webp file for card ${cardNumber}`, 'ERROR');
+        issues.push({ step: PIPELINE_STEPS.CROP_ART_ONLY, path: paths.artOnlyWebp, language: 'shared' });
+        if (this.config.verbose) {
+          this.log(`MISSING: Art only webp file for card ${cardNumber}`, 'ERROR');
+        }
       }
       if (!artOnlyAvifExists) {
-        issues.push({ step: PIPELINE_STEPS.CONVERT_ART_ONLY, path: paths.artOnlyAvif });
-        this.log(`MISSING: Art only avif file for card ${cardNumber}`, 'ERROR');
+        issues.push({ step: PIPELINE_STEPS.CONVERT_ART_ONLY, path: paths.artOnlyAvif, language: 'shared' });
+        if (this.config.verbose) {
+          this.log(`MISSING: Art only avif file for card ${cardNumber}`, 'ERROR');
+        }
       }
 
       // Check dimensions for art_only files
       if (artOnlyWebpExists) {
         const dimensionsCorrect = await this.checkImageDimensions(paths.artOnlyWebp, this.getExpectedDimensions('art_only'));
         if (!dimensionsCorrect) {
-          issues.push({ step: PIPELINE_STEPS.RESIZE_ART_ONLY, path: paths.artOnlyWebp });
+          issues.push({ step: PIPELINE_STEPS.RESIZE_ART_ONLY, path: paths.artOnlyWebp, language: 'shared' });
         }
       }
-    } else if (this.config.skipVariants) {
+    } else if (this.config.skipVariants && this.config.verbose) {
       this.log(`Step 2: Skipping art_only variants (skipVariants=true for edition ${this.config.edition})`, 'INFO');
     }
 
     // Check Step 3: Art and Name Variants
     if (originalExists && !this.config.skipVariants) {
-      this.log(`Step 3: Checking art_and_name variants for card ${cardNumber}`, 'INFO');
+      if (this.config.verbose) {
+        this.log(`Step 3: Checking art_and_name variants for card ${cardNumber} (${language})`, 'INFO');
+      }
       const artAndNameWebpExists = this.checkFileExists(paths.artAndNameWebp);
       const artAndNameAvifExists = this.checkFileExists(paths.artAndNameAvif);
       
       if (!artAndNameWebpExists) {
-        issues.push({ step: PIPELINE_STEPS.CROP_ART_AND_NAME, path: paths.artAndNameWebp });
-        this.log(`MISSING: Art and name webp file for card ${cardNumber}`, 'ERROR');
+        issues.push({ step: PIPELINE_STEPS.CROP_ART_AND_NAME, path: paths.artAndNameWebp, language });
+        if (this.config.verbose) {
+          this.log(`MISSING: Art and name webp file for card ${cardNumber} (${language})`, 'ERROR');
+        }
       }
       if (!artAndNameAvifExists) {
-        issues.push({ step: PIPELINE_STEPS.CONVERT_ART_AND_NAME, path: paths.artAndNameAvif });
-        this.log(`MISSING: Art and name avif file for card ${cardNumber}`, 'ERROR');
+        issues.push({ step: PIPELINE_STEPS.CONVERT_ART_AND_NAME, path: paths.artAndNameAvif, language });
+        if (this.config.verbose) {
+          this.log(`MISSING: Art and name avif file for card ${cardNumber} (${language})`, 'ERROR');
+        }
       }
 
       // Check dimensions for art_and_name files
       if (artAndNameWebpExists) {
         const dimensionsCorrect = await this.checkImageDimensions(paths.artAndNameWebp, this.getExpectedDimensions('art_and_name'));
         if (!dimensionsCorrect) {
-          issues.push({ step: PIPELINE_STEPS.RESIZE_ART_AND_NAME, path: paths.artAndNameWebp });
+          issues.push({ step: PIPELINE_STEPS.RESIZE_ART_AND_NAME, path: paths.artAndNameWebp, language });
         }
       }
-    } else if (this.config.skipVariants) {
+    } else if (this.config.skipVariants && this.config.verbose) {
       this.log(`Step 3: Skipping art_and_name variants (skipVariants=true for edition ${this.config.edition})`, 'INFO');
     }
 
     // Check Step 4: Original AVIF conversion
     if (originalExists) {
-      this.log(`Step 4: Checking original avif conversion for card ${cardNumber}`, 'INFO');
+      if (this.config.verbose) {
+        this.log(`Step 4: Checking original avif conversion for card ${cardNumber} (${language})`, 'INFO');
+      }
       const originalAvifExists = this.checkFileExists(paths.originalAvif);
       if (!originalAvifExists) {
-        issues.push({ step: PIPELINE_STEPS.CONVERT_ORIGINAL, path: paths.originalAvif });
-        this.log(`MISSING: Original avif file for card ${cardNumber}`, 'ERROR');
+        issues.push({ step: PIPELINE_STEPS.CONVERT_ORIGINAL, path: paths.originalAvif, language });
+        if (this.config.verbose) {
+          this.log(`MISSING: Original avif file for card ${cardNumber} (${language})`, 'ERROR');
+        }
       }
 
       // Check dimensions for original files
       const dimensionsCorrect = await this.checkImageDimensions(paths.originalWebp, this.getExpectedDimensions('original'));
       if (!dimensionsCorrect) {
-        issues.push({ step: PIPELINE_STEPS.RESIZE_ORIGINAL, path: paths.originalWebp });
+        issues.push({ step: PIPELINE_STEPS.RESIZE_ORIGINAL, path: paths.originalWebp, language });
       }
     }
 
     this.stats.checked++;
+    this.stats.byLanguage[language].checked++;
     if (issues.length > 0) {
       this.stats.missing++;
-      this.log(`Card ${cardNumber} has ${issues.length} issues`, 'ERROR');
+      this.stats.byLanguage[language].missing++;
+      if (this.config.verbose) {
+        this.log(`Card ${cardNumber} (${language}) has ${issues.length} issues`, 'ERROR');
+      }
       return issues;
     } else {
-      this.log(`Card ${cardNumber} is complete ✓`, 'INFO');
+      if (this.config.verbose) {
+        this.log(`Card ${cardNumber} (${language}) is complete ✓`, 'INFO');
+      }
       return [];
     }
+  }
+  
+  getCurrentLanguages() {
+    return Array.isArray(this.config.languages) ? this.config.languages : [this.config.language];
   }
 
   // Recovery functions adapted from existing scripts
@@ -338,14 +385,14 @@ class PipelineVerifier {
     this.log(`Successfully resized ${filePath}`, 'FIX');
   }
 
-  async fixIssue(issue, cardNum) {
+  async fixIssue(issue, cardNum, language) {
     const cardNumber = this.getCardNumber(cardNum);
-    const paths = this.getFilePaths(cardNum);
+    const paths = this.getFilePaths(cardNum, language);
 
     try {
       switch (issue.step) {
         case PIPELINE_STEPS.DOWNLOAD:
-          await this.downloadImage(cardNum, this.config.language, this.config.edition);
+          await this.downloadImage(cardNum, language || issue.language, this.config.edition);
           break;
 
         case PIPELINE_STEPS.CROP_ART_ONLY:
@@ -395,27 +442,46 @@ class PipelineVerifier {
       }
 
       this.stats.recovered++;
-      this.log(`Successfully fixed issue for card ${cardNumber}: ${issue.step}`, 'FIX');
+      if (language && this.stats.byLanguage[language]) {
+        this.stats.byLanguage[language].recovered++;
+      }
+      this.log(`Successfully fixed issue for card ${cardNumber} (${language}): ${issue.step}`, 'FIX');
       return true;
     } catch (error) {
       this.stats.failed++;
-      this.log(`Failed to fix issue for card ${cardNumber}: ${issue.step} - ${error.message}`, 'ERROR');
+      if (language && this.stats.byLanguage[language]) {
+        this.stats.byLanguage[language].failed++;
+      }
+      this.log(`Failed to fix issue for card ${cardNumber} (${language}): ${issue.step} - ${error.message}`, 'ERROR');
       return false;
     }
   }
 
   async verifyAndFixAll() {
-    this.log(`\n🔍 Starting verification for set ${this.config.edition}, language ${this.config.language}`, 'INFO');
+    const languages = this.getCurrentLanguages();
+    this.log(`\n🔍 Starting verification for set ${this.config.edition}`, 'INFO');
+    this.log(`Languages: ${languages.join(', ')}`, 'INFO');
     this.log(`Checking cards ${this.config.cardRange.start} to ${this.config.cardRange.end}`, 'INFO');
+    this.log(`Auto-fix: ${this.config.autoFix ? 'ENABLED' : 'DISABLED'}`, 'INFO');
 
     const allIssues = [];
 
     // First pass: Identify all issues
     this.log(`\n📋 PHASE 1: IDENTIFYING ISSUES`, 'INFO');
-    for (let cardNum = this.config.cardRange.start; cardNum <= this.config.cardRange.end; cardNum++) {
-      const issues = await this.verifyCard(cardNum);
-      if (issues.length > 0) {
-        allIssues.push({ cardNum, issues });
+    for (const language of languages) {
+      this.log(`\nChecking ${language}...`, 'INFO');
+      let progressCounter = 0;
+      
+      for (let cardNum = this.config.cardRange.start; cardNum <= this.config.cardRange.end; cardNum++) {
+        progressCounter++;
+        if (progressCounter % 50 === 0 || progressCounter === 1) {
+          this.log(`  Progress: ${progressCounter}/${this.config.cardRange.end - this.config.cardRange.start + 1} cards checked...`, 'INFO');
+        }
+        
+        const issues = await this.verifyCard(cardNum, language);
+        if (issues.length > 0) {
+          allIssues.push({ cardNum, language, issues });
+        }
       }
     }
 
@@ -424,27 +490,34 @@ class PipelineVerifier {
       return this.generateReport();
     }
 
+    this.log(`\n📊 Found ${allIssues.length} cards with issues`, 'INFO');
+
+    if (!this.config.autoFix) {
+      this.log(`\n⚠️  Auto-fix is DISABLED. No fixes will be applied.`, 'WARN');
+      this.log(`Set autoFix: true in CONFIG to enable automatic fixes.`, 'INFO');
+      return this.generateReport();
+    }
+
     // Second pass: Fix issues
     this.log(`\n🔧 PHASE 2: FIXING ISSUES`, 'INFO');
-    this.log(`Found issues with ${allIssues.length} cards. Attempting to fix...`, 'INFO');
+    this.log(`Attempting to fix ${allIssues.length} cards...`, 'INFO');
 
-    for (const { cardNum, issues } of allIssues) {
-      this.log(`\nFixing card ${this.getCardNumber(cardNum)}...`, 'INFO');
+    for (const { cardNum, language, issues } of allIssues) {
+      this.log(`\nFixing card ${this.getCardNumber(cardNum)} (${language})...`, 'INFO');
       
       // Sort issues by pipeline order to fix them in the correct sequence
       const sortedIssues = this.sortIssuesByPipelineOrder(issues);
       
       for (const issue of sortedIssues) {
-        await this.fixIssue(issue, cardNum);
+        await this.fixIssue(issue, cardNum, language);
       }
 
       // Re-verify the card after fixes
-      this.log(`Re-verifying card ${this.getCardNumber(cardNum)} after fixes...`, 'INFO');
-      const remainingIssues = await this.verifyCard(cardNum);
+      const remainingIssues = await this.verifyCard(cardNum, language);
       if (remainingIssues.length === 0) {
-        this.log(`✅ Card ${this.getCardNumber(cardNum)} is now complete!`, 'FIX');
+        this.log(`✅ Card ${this.getCardNumber(cardNum)} (${language}) is now complete!`, 'FIX');
       } else {
-        this.log(`⚠️ Card ${this.getCardNumber(cardNum)} still has ${remainingIssues.length} issues`, 'WARN');
+        this.log(`⚠️ Card ${this.getCardNumber(cardNum)} (${language}) still has ${remainingIssues.length} issues`, 'WARN');
       }
     }
 
@@ -470,36 +543,54 @@ class PipelineVerifier {
   }
 
   generateReport() {
+    const languages = this.getCurrentLanguages();
+    const totalCards = this.config.cardRange.end - this.config.cardRange.start + 1;
+    
     const report = {
       timestamp: new Date().toISOString(),
       config: this.config,
       stats: this.stats,
       summary: {
-        totalCards: this.config.cardRange.end - this.config.cardRange.start + 1,
+        totalCards: totalCards,
+        totalLanguages: languages.length,
+        totalExpectedFiles: totalCards * languages.length,
         checkedCards: this.stats.checked,
         cardsWithIssues: this.stats.missing,
         recoveredCards: this.stats.recovered,
         failedRecoveries: this.stats.failed
       },
+      byLanguage: this.stats.byLanguage,
       errors: this.errors,
       warnings: this.warnings,
       fixes: this.fixes
     };
 
-    this.log(`\n📊 FINAL REPORT`, 'INFO');
-    this.log(`Total Cards: ${report.summary.totalCards}`, 'INFO');
-    this.log(`Checked Cards: ${report.summary.checkedCards}`, 'INFO');
+    this.log(`\n${'='.repeat(80)}`, 'INFO');
+    this.log(`📊 FINAL REPORT - SET ${this.config.edition}`, 'INFO');
+    this.log(`${'='.repeat(80)}`, 'INFO');
+    this.log(`Total Cards per Language: ${report.summary.totalCards}`, 'INFO');
+    this.log(`Languages: ${languages.join(', ')}`, 'INFO');
+    this.log(`Total Checked: ${report.summary.checkedCards}`, 'INFO');
     this.log(`Cards with Issues: ${report.summary.cardsWithIssues}`, 'INFO');
-    this.log(`Recovered Cards: ${report.summary.recoveredCards}`, 'INFO');
+    this.log(`Recovered: ${report.summary.recoveredCards}`, 'INFO');
     this.log(`Failed Recoveries: ${report.summary.failedRecoveries}`, 'INFO');
-    this.log(`Errors: ${this.errors.length}`, 'INFO');
+    
+    this.log(`\nBy Language:`, 'INFO');
+    languages.forEach(lang => {
+      const langStats = this.stats.byLanguage[lang];
+      this.log(`  ${lang}: checked=${langStats.checked}, missing=${langStats.missing}, recovered=${langStats.recovered}, failed=${langStats.failed}`, 'INFO');
+    });
+
+    this.log(`\nErrors: ${this.errors.length}`, 'INFO');
     this.log(`Warnings: ${this.warnings.length}`, 'INFO');
     this.log(`Fixes Applied: ${this.fixes.length}`, 'INFO');
 
     // Write detailed report to file
-    const reportPath = `./pipeline-report-${this.config.edition}-${this.config.language}-${Date.now()}.json`;
+    const langSuffix = languages.length === 1 ? languages[0] : 'ALL';
+    const reportPath = `./pipeline-report-${this.config.edition}-${langSuffix}-${Date.now()}.json`;
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    this.log(`Detailed report saved to: ${reportPath}`, 'INFO');
+    this.log(`\nDetailed report saved to: ${reportPath}`, 'INFO');
+    this.log(`${'='.repeat(80)}`, 'INFO');
 
     return report;
   }
