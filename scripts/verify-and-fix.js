@@ -11,9 +11,9 @@ import { rootFolder } from "./shared.js";
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
-  edition: "008",
-  languages: ["EN", "IT", "DE", "FR"], // Languages to process
-  cardRange: { start: 1, end: 251 },
+  edition: "007",
+  languages: ["EN", "IT", "DE", "FR"], // Languages to process - PHASE 5: ALL
+  cardRange: { start: 1, end: 222 },
   autoFix: true, // Set to false for dry-run (report only)
   skipVariants: false, // Set to true for editions that only have original files
   downloadSource: "dreamborn", // "dreamborn" or "ravensburg"
