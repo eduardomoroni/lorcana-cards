@@ -12,7 +12,7 @@ import { rootFolder } from "./shared.js";
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
   edition: "009",
-  languages: ["IT"], // Languages to process
+  languages: ["EN", "IT", "DE", "FR"], // Languages to process
   cardRange: { start: 1, end: 251 },
   autoFix: true, // Set to false for dry-run (report only)
   skipVariants: false, // Set to true for editions that only have original files
@@ -503,19 +503,35 @@ class ComprehensivePipelineValidator {
     for (const { cardNum, language, issues } of allIssues) {
       console.log(`Fixing card ${this.getCardNumber(cardNum)} (${language})...`);
       
-      // Sort issues by pipeline order
-      const sortedIssues = this.sortIssuesByPipelineOrder(issues);
+      let remainingIssues = issues;
+      let maxAttempts = 3; // Try up to 3 times to resolve all issues
+      let attempt = 0;
       
-      for (const issue of sortedIssues) {
-        await this.fixIssue(issue, cardNum, language);
-      }
+      while (remainingIssues.length > 0 && attempt < maxAttempts) {
+        attempt++;
+        
+        // Sort issues by pipeline order
+        const sortedIssues = this.sortIssuesByPipelineOrder(remainingIssues);
+        
+        for (const issue of sortedIssues) {
+          await this.fixIssue(issue, cardNum, language);
+        }
 
-      // Re-verify after fixes
-      const remainingIssues = await this.validateCard(cardNum, language);
-      if (remainingIssues.length === 0) {
-        console.log(`  ✅ Card ${this.getCardNumber(cardNum)} (${language}) is now complete!`);
-      } else {
-        console.log(`  ⚠️  Card ${this.getCardNumber(cardNum)} (${language}) still has ${remainingIssues.length} issues`);
+        // Re-verify after fixes
+        remainingIssues = await this.validateCard(cardNum, language);
+        
+        if (remainingIssues.length === 0) {
+          console.log(`  ✅ Card ${this.getCardNumber(cardNum)} (${language}) is now complete!`);
+          break;
+        } else if (attempt < maxAttempts) {
+          if (this.config.verbose) {
+            console.log(`  🔄 Attempt ${attempt}: ${remainingIssues.length} issues remaining, retrying...`);
+          }
+        }
+      }
+      
+      if (remainingIssues.length > 0) {
+        console.log(`  ⚠️  Card ${this.getCardNumber(cardNum)} (${language}) still has ${remainingIssues.length} issues after ${attempt} attempts`);
       }
     }
 
