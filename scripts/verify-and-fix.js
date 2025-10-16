@@ -10,10 +10,11 @@ import { rootFolder, languages, edition } from "./shared.js";
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
-  edition: "008", // Override from shared.js if needed
+  edition: "010", // Override from shared.js if needed
   language: "EN", // Single language focus
-  cardRange: { start: 1, end: 224 }, // Based on analysis of existing files
-  verbose: true
+  cardRange: { start: 1, end: 242 }, // Based on analysis of existing files
+  verbose: true, // Set to false for cleaner output
+  skipVariants: false // Set to true for editions that only have original files (like 010)
 };
 
 // Pipeline steps enum
@@ -133,8 +134,8 @@ class PipelineVerifier {
       this.log(`MISSING: Original webp file for card ${cardNumber}`, 'ERROR');
     }
 
-    // Check Step 2: Art Only Variants (only if original exists)
-    if (originalExists) {
+    // Check Step 2: Art Only Variants (only if original exists and variants are not skipped)
+    if (originalExists && !this.config.skipVariants) {
       this.log(`Step 2: Checking art_only variants for card ${cardNumber}`, 'INFO');
       const artOnlyWebpExists = this.checkFileExists(paths.artOnlyWebp);
       const artOnlyAvifExists = this.checkFileExists(paths.artOnlyAvif);
@@ -155,10 +156,12 @@ class PipelineVerifier {
           issues.push({ step: PIPELINE_STEPS.RESIZE_ART_ONLY, path: paths.artOnlyWebp });
         }
       }
+    } else if (this.config.skipVariants) {
+      this.log(`Step 2: Skipping art_only variants (skipVariants=true for edition ${this.config.edition})`, 'INFO');
     }
 
     // Check Step 3: Art and Name Variants
-    if (originalExists) {
+    if (originalExists && !this.config.skipVariants) {
       this.log(`Step 3: Checking art_and_name variants for card ${cardNumber}`, 'INFO');
       const artAndNameWebpExists = this.checkFileExists(paths.artAndNameWebp);
       const artAndNameAvifExists = this.checkFileExists(paths.artAndNameAvif);
@@ -179,6 +182,8 @@ class PipelineVerifier {
           issues.push({ step: PIPELINE_STEPS.RESIZE_ART_AND_NAME, path: paths.artAndNameWebp });
         }
       }
+    } else if (this.config.skipVariants) {
+      this.log(`Step 3: Skipping art_and_name variants (skipVariants=true for edition ${this.config.edition})`, 'INFO');
     }
 
     // Check Step 4: Original AVIF conversion
