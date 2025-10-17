@@ -11,11 +11,11 @@ import { rootFolder } from "./shared.js";
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
-  edition: "002",
+  edition: "001",
   languages: ["EN", "IT", "DE", "FR"], // Languages to process
-  cardRange: { start: 1, end: 216 },
+  cardRange: { start: 1, end: 216 }, // CORRECTED: Set 001 has 216 cards, not 204
   autoFix: true, // Set to false for dry-run (report only)
-  skipVariants: false, // Set to true for editions that only have original files
+  skipVariants: false, // CORRECTED: Set 001 HAS variants (art_only, art_and_name)
   downloadSource: "dreamborn", // "dreamborn" or "ravensburg"
   verbose: false, // Detailed logging
   tolerancePx: 2 // Tolerance for dimension differences (±2px)
