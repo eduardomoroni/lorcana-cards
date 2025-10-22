@@ -11,12 +11,12 @@ import { rootFolder } from "./shared.js";
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
-  edition: "001",
-  languages: ["EN", "IT", "DE", "FR"], // Languages to process
+  edition: "010",
+  languages: ["EN"], // Languages to process
   cardRange: { start: 1, end: 216 }, // CORRECTED: Set 001 has 216 cards, not 204
   autoFix: true, // Set to false for dry-run (report only)
   skipVariants: false, // CORRECTED: Set 001 HAS variants (art_only, art_and_name)
-  downloadSource: "dreamborn", // "dreamborn" or "ravensburg"
+  downloadSource: "lorcast", // "dreamborn", "ravensburg", or "lorcast"
   verbose: false, // Detailed logging
   tolerancePx: 2 // Tolerance for dimension differences (±2px)
 };
@@ -48,6 +48,7 @@ class ComprehensivePipelineValidator {
     this.errors = [];
     this.warnings = [];
     this.fixes = [];
+    this.lorcastDataCache = null; // Cache for Lorcast JSON data
     this.stats = {
       checked: 0,
       missing: 0,
@@ -84,6 +85,31 @@ class ComprehensivePipelineValidator {
     } else if (type === 'FIX') {
       this.fixes.push(logMessage);
     }
+  }
+
+  loadLorcastData(edition) {
+    if (this.lorcastDataCache) {
+      return this.lorcastDataCache;
+    }
+    
+    const lorcastPath = `./scripts/lorcast/${edition}.json`;
+    if (!fs.existsSync(lorcastPath)) {
+      throw new Error(`Lorcast JSON file not found: ${lorcastPath}`);
+    }
+    
+    this.lorcastDataCache = JSON.parse(fs.readFileSync(lorcastPath, 'utf-8'));
+    this.log(`Loaded ${this.lorcastDataCache.length} cards from Lorcast data`, 'INFO');
+    return this.lorcastDataCache;
+  }
+
+  findLorcastCard(cardNumber, language) {
+    const lorcastData = this.loadLorcastData(this.config.edition);
+    const collectorNumber = cardNumber.toString().padStart(3, '0');
+    const card = lorcastData.find(c => 
+      c.collector_number === collectorNumber && 
+      c.lang === language.toLowerCase()
+    );
+    return card;
   }
 
   getCardNumber(num) {
@@ -254,10 +280,58 @@ class ComprehensivePipelineValidator {
   async downloadImage(cardNumber, language, edition) {
     const cardNumberPadded = cardNumber.toString().padStart(3, "0");
     const editionPadded = edition.toString().padStart(3, "0");
-    const url = `https://cdn.dreamborn.ink/images/${language.toLowerCase()}/cards/${editionPadded}-${cardNumberPadded}`;
-    const destination = `${rootFolder}/${language.toUpperCase()}/${editionPadded}/${cardNumberPadded}.webp`;
+    
+    let url, destination, extension;
+    
+    if (this.config.downloadSource === 'lorcast') {
+      // Lorcast: Find card in JSON and get URL
+      const card = this.findLorcastCard(cardNumberPadded, language);
+      if (!card) {
+        this.log(`Card ${cardNumberPadded} not found in Lorcast data for language ${language}`, 'ERROR');
+        return Promise.reject(new Error(`Card not found in Lorcast data`));
+      }
+      
+      url = card.image_uris.digital.large;
+      if (!url) {
+        this.log(`No large image URL for card ${cardNumberPadded}`, 'ERROR');
+        return Promise.reject(new Error(`No image URL found`));
+      }
+      
+      // Detect extension from URL
+      const urlLower = url.toLowerCase();
+      extension = urlLower.includes(".avif") ? "avif" : 
+                  urlLower.includes(".webp") ? "webp" : 
+                  urlLower.includes(".jpg") ? "jpg" : "avif";
+      
+      destination = `${rootFolder}/${language.toUpperCase()}/${editionPadded}/${cardNumberPadded}.${extension}`;
+    } else if (this.config.downloadSource === "ravensburg") {
+      // Ravensburg: Get URL from mapping file
+      const mappingPath = "./scripts/ravensburg-mapping.json";
+      
+      if (!fs.existsSync(mappingPath)) {
+        this.log(`Ravensburg mapping file not found: ${mappingPath}`, 'ERROR');
+        return Promise.reject(new Error('Ravensburg mapping file not found'));
+      }
+      
+      const mapping = JSON.parse(fs.readFileSync(mappingPath, 'utf8'));
+      const cardEntry = mapping.find(m => m.set === editionPadded && m.cardNumber === cardNumberPadded);
+      
+      if (!cardEntry || !cardEntry.url) {
+        this.log(`Card ${cardNumberPadded} not found in Ravensburg mapping`, 'ERROR');
+        return Promise.reject(new Error(`Card not found in mapping`));
+      }
+      
+      url = cardEntry.url;
+      extension = "webp";
+      destination = `${rootFolder}/${language.toUpperCase()}/${editionPadded}/${cardNumberPadded}.webp`;
+    } else {
+      // Dreamborn
+      url = `https://cdn.dreamborn.ink/images/${language.toLowerCase()}/cards/${editionPadded}-${cardNumberPadded}`;
+      extension = "webp";
+      destination = `${rootFolder}/${language.toUpperCase()}/${editionPadded}/${cardNumberPadded}.webp`;
+    }
 
-    this.log(`Downloading ${url}`, 'FIX');
+    this.log(`Downloading from ${this.config.downloadSource}: ${url}`, 'FIX');
 
     const folder = path.dirname(destination);
     if (!fs.existsSync(folder)) {
@@ -270,9 +344,25 @@ class ComprehensivePipelineValidator {
           res
             .pipe(fs.createWriteStream(destination))
             .on("error", reject)
-            .once("close", () => {
+            .once("close", async () => {
               this.log(`Downloaded ${destination}`, 'FIX');
-              resolve(destination);
+              
+              // If Lorcast downloaded AVIF but pipeline needs WebP, convert it
+              if (this.config.downloadSource === 'lorcast' && extension === 'avif') {
+                const webpPath = destination.replace('.avif', '.webp');
+                try {
+                  await sharp(destination)
+                    .webp({ quality: 90 })
+                    .toFile(webpPath);
+                  this.log(`Converted ${destination} to WebP`, 'FIX');
+                  resolve(webpPath);
+                } catch (error) {
+                  this.log(`Failed to convert AVIF to WebP: ${error.message}`, 'ERROR');
+                  reject(error);
+                }
+              } else {
+                resolve(destination);
+              }
             });
         } else {
           res.resume();

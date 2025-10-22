@@ -8,3 +8,4 @@ validation-report-*.json
 pipeline-report-*.json
 audit-report-*.json
 audit-report-*.csv
+*.log
