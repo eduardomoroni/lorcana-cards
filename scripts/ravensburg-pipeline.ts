@@ -110,8 +110,7 @@ async function transformImage(
       withoutEnlargement: false,
     })
     .avif({
-      quality: 50,
-      speed: 1,
+      quality: 75,
     })
     .toFile(avifPath);
 
@@ -286,17 +285,18 @@ async function runPipeline(): Promise<void> {
 
   // Group by set and card number to avoid duplicate processing
   // Only process the first variant (Regular) for each card
+  // Filter for set 010 only
   const uniqueCards = new Map<string, MappingEntry>();
   for (const entry of mapping) {
     const key = `${entry.set}-${entry.cardNumber}`;
-    if (!uniqueCards.has(key) && entry.variantId === "Regular") {
+    if (!uniqueCards.has(key) && entry.variantId === "Regular" && entry.set === "010") {
       uniqueCards.set(key, entry);
     }
   }
 
   const cardsToProcess = Array.from(uniqueCards.values());
   console.log(
-    `Processing ${cardsToProcess.length} unique cards (Regular variants only)\n`
+    `Processing ${cardsToProcess.length} unique cards from Set 010 (Regular variants only)\n`
   );
 
   // Process all cards

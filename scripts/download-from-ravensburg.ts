@@ -211,9 +211,13 @@ async function downloadCard(mappingEntry: MappingEntry): Promise<void> {
     fs.mkdirSync(folder, { recursive: true });
   }
   
-  // Skip if file already exists
-  if (fs.existsSync(destination)) {
-    console.log(`File ${destination} already exists, skipping`);
+  // Skip if file already exists in any format (webp, jpg, avif)
+  const basePath = `${rootFolder}/${language}/${set}/${cardNumber}`;
+  const existingFormats = ['.webp', '.jpg', '.avif', '.png'];
+  const existingFile = existingFormats.find(ext => fs.existsSync(basePath + ext));
+  
+  if (existingFile) {
+    console.log(`File ${basePath}${existingFile} already exists, skipping`);
     return;
   }
   
@@ -250,14 +254,17 @@ async function program(): Promise<void> {
       return;
     }
     
-    console.log(`\nStarting download of ${mapping.length} card images...\n`);
+    // Filter for set 010 only
+    const set010Cards = mapping.filter(entry => entry.set === "010");
+    
+    console.log(`\nStarting download of ${set010Cards.length} card images from Set 010...\n`);
     
     // Download all cards
     const errors: Array<{ entry: MappingEntry; error: string }> = [];
-    for (let i = 0; i < mapping.length; i++) {
-      const entry = mapping[i];
+    for (let i = 0; i < set010Cards.length; i++) {
+      const entry = set010Cards[i];
       console.log(
-        `[${i + 1}/${mapping.length}] ${entry.name} (${entry.identifier}) - ${entry.variantId}`
+        `[${i + 1}/${set010Cards.length}] ${entry.name} (${entry.identifier}) - ${entry.variantId}`
       );
       
       try {
