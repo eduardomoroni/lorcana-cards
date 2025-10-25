@@ -21,7 +21,7 @@ const rootFolder = path.join(projectRoot, 'public', 'assets', 'images', 'cards')
 const CONFIG = {
   edition: "010",
   languages: ["EN"], // Languages to process
-  cardRange: { start: 1, end: 242 }, // Set 010 has 216 regular cards + enchanted variants up to 242
+  cardRange: { start: 1, end: 242 }, // Set 010 has 204 regular cards + enchanted variants up to 242
   autoFix: true, // Set to false for dry-run (report only)
   skipVariants: false, // Set 010 HAS variants (art_only, art_and_name)
   downloadSource: "all", // "dreamborn", "ravensburg", "lorcast", or "all" (tries all in priority order)
@@ -138,8 +138,9 @@ class ComprehensivePipelineValidator {
     const lorcastData = this.loadLorcastData(this.config.edition);
     if (!lorcastData) return null;
 
-    const collectorNumber = cardNumber.toString().padStart(3, '0');
-    const card = lorcastData.find(c => 
+    // Lorcast uses unpadded collector numbers ("1", "2", etc.) not ("001", "002", etc.)
+    const collectorNumber = cardNumber.toString();
+    const card = lorcastData.find(c =>
       c.collector_number === collectorNumber && 
       c.lang === language.toLowerCase()
     );
