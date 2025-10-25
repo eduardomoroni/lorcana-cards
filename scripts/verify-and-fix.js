@@ -6,8 +6,16 @@ import sharp from "sharp";
 import { joinImages } from "join-images";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import https from "https";
-import { rootFolder } from "./shared.js";
+
+// Get the directory name of the current module (ES module equivalent of __dirname)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Resolve paths relative to project root (parent of scripts directory)
+const projectRoot = path.resolve(__dirname, '..');
+const rootFolder = path.join(projectRoot, 'public', 'assets', 'images', 'cards');
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
@@ -16,7 +24,7 @@ const CONFIG = {
   cardRange: { start: 1, end: 216 }, // CORRECTED: Set 001 has 216 cards, not 204
   autoFix: true, // Set to false for dry-run (report only)
   skipVariants: false, // CORRECTED: Set 001 HAS variants (art_only, art_and_name)
-  downloadSource: "lorcast", // "dreamborn", "ravensburg", or "lorcast"
+  downloadSource: "all", // "dreamborn", "ravensburg", "lorcast", or "all" (tries all in priority order)
   verbose: false, // Detailed logging
   tolerancePx: 2 // Tolerance for dimension differences (±2px)
 };
@@ -49,6 +57,7 @@ class ComprehensivePipelineValidator {
     this.warnings = [];
     this.fixes = [];
     this.lorcastDataCache = null; // Cache for Lorcast JSON data
+    this.ravensburgMappingCache = null; // Cache for Ravensburg mapping
     this.stats = {
       checked: 0,
       missing: 0,
@@ -57,7 +66,13 @@ class ComprehensivePipelineValidator {
       skipped: 0,
       byLanguage: {}
     };
-    
+    this.sourceAvailability = {
+      lorcast: new Set(),
+      ravensburg: new Set(),
+      disk: new Set()
+    };
+    this.missingCards = []; // Track missing cards with details
+
     // Initialize language stats
     config.languages.forEach(lang => {
       this.stats.byLanguage[lang] = {
@@ -92,9 +107,10 @@ class ComprehensivePipelineValidator {
       return this.lorcastDataCache;
     }
     
-    const lorcastPath = `./scripts/lorcast/${edition}.json`;
+    const lorcastPath = path.join(__dirname, 'lorcast', `${edition}.json`);
     if (!fs.existsSync(lorcastPath)) {
-      throw new Error(`Lorcast JSON file not found: ${lorcastPath}`);
+      this.log(`Lorcast JSON file not found: ${lorcastPath}`, 'WARN');
+      return null;
     }
     
     this.lorcastDataCache = JSON.parse(fs.readFileSync(lorcastPath, 'utf-8'));
@@ -102,14 +118,77 @@ class ComprehensivePipelineValidator {
     return this.lorcastDataCache;
   }
 
+  loadRavensburgMapping() {
+    if (this.ravensburgMappingCache) {
+      return this.ravensburgMappingCache;
+    }
+
+    const mappingPath = path.join(__dirname, 'ravensburg-mapping.json');
+    if (!fs.existsSync(mappingPath)) {
+      this.log(`Ravensburg mapping file not found: ${mappingPath}`, 'WARN');
+      return null;
+    }
+
+    this.ravensburgMappingCache = JSON.parse(fs.readFileSync(mappingPath, 'utf-8'));
+    this.log(`Loaded ${this.ravensburgMappingCache.length} cards from Ravensburg mapping`, 'INFO');
+    return this.ravensburgMappingCache;
+  }
+
   findLorcastCard(cardNumber, language) {
     const lorcastData = this.loadLorcastData(this.config.edition);
+    if (!lorcastData) return null;
+
     const collectorNumber = cardNumber.toString().padStart(3, '0');
     const card = lorcastData.find(c => 
       c.collector_number === collectorNumber && 
       c.lang === language.toLowerCase()
     );
     return card;
+  }
+
+  findRavensburgCard(cardNumber, edition) {
+    const mapping = this.loadRavensburgMapping();
+    if (!mapping) return null;
+
+    const cardNumberPadded = cardNumber.toString().padStart(3, '0');
+    const editionPadded = edition.toString().padStart(3, '0');
+    const card = mapping.find(m => m.set === editionPadded && m.cardNumber === cardNumberPadded);
+    return card;
+  }
+
+  analyzeSourceAvailability() {
+    const editionPadded = this.config.edition.toString().padStart(3, '0');
+
+    // Analyze Lorcast availability
+    const lorcastData = this.loadLorcastData(this.config.edition);
+    if (lorcastData) {
+      const primaryLang = this.config.languages[0].toLowerCase();
+      lorcastData.forEach(card => {
+        if (card.lang === primaryLang && card.set_code === editionPadded) {
+          this.sourceAvailability.lorcast.add(card.collector_number);
+        }
+      });
+    }
+
+    // Analyze Ravensburg availability
+    const ravensburgMapping = this.loadRavensburgMapping();
+    if (ravensburgMapping) {
+      ravensburgMapping.forEach(card => {
+        if (card.set === editionPadded) {
+          this.sourceAvailability.ravensburg.add(card.cardNumber);
+        }
+      });
+    }
+
+    // Analyze disk availability (first language only)
+    const primaryLang = this.config.languages[0];
+    for (let cardNum = this.config.cardRange.start; cardNum <= this.config.cardRange.end; cardNum++) {
+      const cardNumber = this.getCardNumber(cardNum);
+      const paths = this.getFilePaths(cardNum, primaryLang);
+      if (this.checkFileExists(paths.originalWebp)) {
+        this.sourceAvailability.disk.add(cardNumber);
+      }
+    }
   }
 
   getCardNumber(num) {
@@ -266,6 +345,25 @@ class ComprehensivePipelineValidator {
     if (issues.length > 0) {
       this.stats.missing++;
       this.stats.byLanguage[language].missing++;
+
+      // Track missing cards with their names
+      const lorcastCard = this.findLorcastCard(cardNumber, language);
+      const cardName = lorcastCard ? lorcastCard.name : `Card ${cardNumber}`;
+
+      // Check if already tracked (may be called multiple times)
+      const alreadyTracked = this.missingCards.some(m =>
+        m.cardNumber === cardNumber && m.language === language
+      );
+
+      if (!alreadyTracked) {
+        this.missingCards.push({
+          cardNumber,
+          cardName,
+          language,
+          issues: issues.map(i => i.step)
+        });
+      }
+
       return issues;
     } else {
       if (this.config.verbose) {
@@ -277,24 +375,22 @@ class ComprehensivePipelineValidator {
 
   // === FIX OPERATIONS ===
 
-  async downloadImage(cardNumber, language, edition) {
+  async downloadFromSource(source, cardNumber, language, edition) {
     const cardNumberPadded = cardNumber.toString().padStart(3, "0");
     const editionPadded = edition.toString().padStart(3, "0");
     
     let url, destination, extension;
     
-    if (this.config.downloadSource === 'lorcast') {
+    if (source === 'lorcast') {
       // Lorcast: Find card in JSON and get URL
       const card = this.findLorcastCard(cardNumberPadded, language);
       if (!card) {
-        this.log(`Card ${cardNumberPadded} not found in Lorcast data for language ${language}`, 'ERROR');
-        return Promise.reject(new Error(`Card not found in Lorcast data`));
+        throw new Error(`Card not found in Lorcast data`);
       }
       
       url = card.image_uris.digital.large;
       if (!url) {
-        this.log(`No large image URL for card ${cardNumberPadded}`, 'ERROR');
-        return Promise.reject(new Error(`No image URL found`));
+        throw new Error(`No image URL found`);
       }
       
       // Detect extension from URL
@@ -304,34 +400,34 @@ class ComprehensivePipelineValidator {
                   urlLower.includes(".jpg") ? "jpg" : "avif";
       
       destination = `${rootFolder}/${language.toUpperCase()}/${editionPadded}/${cardNumberPadded}.${extension}`;
-    } else if (this.config.downloadSource === "ravensburg") {
+    } else if (source === "ravensburg") {
       // Ravensburg: Get URL from mapping file
-      const mappingPath = "./scripts/ravensburg-mapping.json";
-      
+      const mappingPath = path.join(__dirname, 'ravensburg-mapping.json');
+
       if (!fs.existsSync(mappingPath)) {
-        this.log(`Ravensburg mapping file not found: ${mappingPath}`, 'ERROR');
-        return Promise.reject(new Error('Ravensburg mapping file not found'));
+        throw new Error('Ravensburg mapping file not found');
       }
       
       const mapping = JSON.parse(fs.readFileSync(mappingPath, 'utf8'));
       const cardEntry = mapping.find(m => m.set === editionPadded && m.cardNumber === cardNumberPadded);
       
       if (!cardEntry || !cardEntry.url) {
-        this.log(`Card ${cardNumberPadded} not found in Ravensburg mapping`, 'ERROR');
-        return Promise.reject(new Error(`Card not found in mapping`));
+        throw new Error(`Card not found in mapping`);
       }
       
       url = cardEntry.url;
       extension = "webp";
       destination = `${rootFolder}/${language.toUpperCase()}/${editionPadded}/${cardNumberPadded}.webp`;
-    } else {
+    } else if (source === 'dreamborn') {
       // Dreamborn
       url = `https://cdn.dreamborn.ink/images/${language.toLowerCase()}/cards/${editionPadded}-${cardNumberPadded}`;
       extension = "webp";
       destination = `${rootFolder}/${language.toUpperCase()}/${editionPadded}/${cardNumberPadded}.webp`;
+    } else {
+      throw new Error(`Unknown download source: ${source}`);
     }
 
-    this.log(`Downloading from ${this.config.downloadSource}: ${url}`, 'FIX');
+    this.log(`Trying ${source}: ${url}`, 'FIX');
 
     const folder = path.dirname(destination);
     if (!fs.existsSync(folder)) {
@@ -345,10 +441,10 @@ class ComprehensivePipelineValidator {
             .pipe(fs.createWriteStream(destination))
             .on("error", reject)
             .once("close", async () => {
-              this.log(`Downloaded ${destination}`, 'FIX');
-              
+              this.log(`Downloaded ${destination} from ${source}`, 'FIX');
+
               // If Lorcast downloaded AVIF but pipeline needs WebP, convert it
-              if (this.config.downloadSource === 'lorcast' && extension === 'avif') {
+              if (source === 'lorcast' && extension === 'avif') {
                 const webpPath = destination.replace('.avif', '.webp');
                 try {
                   await sharp(destination)
@@ -366,11 +462,38 @@ class ComprehensivePipelineValidator {
             });
         } else {
           res.resume();
-          this.log(`Download failed: ${url} - Status: ${res.statusCode}`, 'ERROR');
           reject(new Error(`Request Failed With Status Code: ${res.statusCode}`));
         }
       });
     });
+  }
+
+  async downloadImage(cardNumber, language, edition) {
+    const cardNumberPadded = cardNumber.toString().padStart(3, "0");
+
+    // If downloadSource is "all", try each source in priority order
+    if (this.config.downloadSource === 'all') {
+      const sources = ['ravensburg', 'dreamborn', 'lorcast'];
+
+      for (const source of sources) {
+        try {
+          this.log(`Attempting download from ${source} for card ${cardNumberPadded} (${language})`, 'FIX');
+          const result = await this.downloadFromSource(source, cardNumber, language, edition);
+          this.log(`Successfully downloaded card ${cardNumberPadded} from ${source}`, 'FIX');
+          return result;
+        } catch (error) {
+          this.log(`Failed to download from ${source}: ${error.message}`, 'WARN');
+          // Continue to next source
+        }
+      }
+
+      // If all sources failed
+      this.log(`Card ${cardNumberPadded} could not be downloaded from any source`, 'ERROR');
+      return Promise.reject(new Error(`Failed to download from all sources`));
+    } else {
+      // Use single specified source
+      return this.downloadFromSource(this.config.downloadSource, cardNumber, language, edition);
+    }
   }
 
   async resizeImage(filePath, dimensions) {
@@ -550,6 +673,18 @@ class ComprehensivePipelineValidator {
     console.log(`Tolerance: ±${this.config.tolerancePx}px`);
     console.log();
 
+    // Analyze source availability
+    console.log(`📊 ANALYZING SOURCE AVAILABILITY`);
+    console.log(`${'='.repeat(80)}\n`);
+    this.analyzeSourceAvailability();
+
+    const totalCardsInSet = this.config.cardRange.end - this.config.cardRange.start + 1;
+    console.log(`Total cards in set: ${totalCardsInSet}`);
+    console.log(`Cards available in Lorcast: ${this.sourceAvailability.lorcast.size}`);
+    console.log(`Cards available in Ravensburg: ${this.sourceAvailability.ravensburg.size}`);
+    console.log(`Cards available on Disk: ${this.sourceAvailability.disk.size}`);
+    console.log();
+
     const allIssues = [];
 
     // Phase 1: Identify all issues
@@ -658,6 +793,15 @@ class ComprehensivePipelineValidator {
         failedRecoveries: this.stats.failed,
         skippedCards: this.stats.skipped
       },
+      sourceAvailability: {
+        lorcast: this.sourceAvailability.lorcast.size,
+        ravensburg: this.sourceAvailability.ravensburg.size,
+        disk: this.sourceAvailability.disk.size,
+        lorcastCards: Array.from(this.sourceAvailability.lorcast).sort(),
+        ravensburgCards: Array.from(this.sourceAvailability.ravensburg).sort(),
+        diskCards: Array.from(this.sourceAvailability.disk).sort()
+      },
+      missingCards: this.missingCards,
       byLanguage: this.stats.byLanguage,
       errors: this.errors,
       warnings: this.warnings,
@@ -686,9 +830,20 @@ class ComprehensivePipelineValidator {
     console.log(`  Warnings: ${this.warnings.length}`);
     console.log(`  Fixes Applied: ${this.fixes.length}`);
 
+    // Display missing cards
+    if (this.missingCards.length > 0) {
+      console.log(`\n❌ MISSING CARDS (${this.missingCards.length}):`);
+      console.log(`${'='.repeat(80)}`);
+      this.missingCards.forEach(card => {
+        const issuesStr = card.issues.join(', ');
+        console.log(`  ${card.cardNumber} - ${card.cardName} (${card.language})`);
+        console.log(`    Issues: ${issuesStr}`);
+      });
+    }
+
     // Save report
     const langSuffix = this.config.languages.length === 1 ? this.config.languages[0] : 'ALL';
-    const reportPath = `./validation-report-${this.config.edition}-${langSuffix}-${Date.now()}.json`;
+    const reportPath = path.join(projectRoot, `validation-report-${this.config.edition}-${langSuffix}-${Date.now()}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`\n💾 Report saved to: ${reportPath}`);
     console.log(`${'='.repeat(80)}`);
