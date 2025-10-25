@@ -164,7 +164,7 @@ class ComprehensivePipelineValidator {
     if (lorcastData) {
       const primaryLang = this.config.languages[0].toLowerCase();
       lorcastData.forEach(card => {
-        if (card.lang === primaryLang && card.set_code === editionPadded) {
+        if (card.lang === primaryLang && card.set && card.set.code === editionPadded) {
           this.sourceAvailability.lorcast.add(card.collector_number);
         }
       });
