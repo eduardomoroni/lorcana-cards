@@ -21,9 +21,9 @@ const rootFolder = path.join(projectRoot, 'public', 'assets', 'images', 'cards')
 const CONFIG = {
   edition: "010",
   languages: ["EN"], // Languages to process
-  cardRange: { start: 1, end: 216 }, // CORRECTED: Set 001 has 216 cards, not 204
+  cardRange: { start: 1, end: 242 }, // Set 010 has 216 regular cards + enchanted variants up to 242
   autoFix: true, // Set to false for dry-run (report only)
-  skipVariants: false, // CORRECTED: Set 001 HAS variants (art_only, art_and_name)
+  skipVariants: false, // Set 010 HAS variants (art_only, art_and_name)
   downloadSource: "all", // "dreamborn", "ravensburg", "lorcast", or "all" (tries all in priority order)
   verbose: false, // Detailed logging
   tolerancePx: 2 // Tolerance for dimension differences (±2px)
@@ -157,14 +157,18 @@ class ComprehensivePipelineValidator {
   }
 
   analyzeSourceAvailability() {
-    const editionPadded = this.config.edition.toString().padStart(3, '0');
+    const editionNum = parseInt(this.config.edition, 10);
+    const editionPadded = editionNum.toString().padStart(3, '0');
+    const editionUnpadded = editionNum.toString();
 
     // Analyze Lorcast availability
     const lorcastData = this.loadLorcastData(this.config.edition);
     if (lorcastData) {
       const primaryLang = this.config.languages[0].toLowerCase();
       lorcastData.forEach(card => {
-        if (card.lang === primaryLang && card.set && card.set.code === editionPadded) {
+        // Lorcast set.code might be "10" or "010", so check both
+        if (card.lang === primaryLang && card.set &&
+            (card.set.code === editionPadded || card.set.code === editionUnpadded)) {
           this.sourceAvailability.lorcast.add(card.collector_number);
         }
       });
@@ -185,7 +189,8 @@ class ComprehensivePipelineValidator {
     for (let cardNum = this.config.cardRange.start; cardNum <= this.config.cardRange.end; cardNum++) {
       const cardNumber = this.getCardNumber(cardNum);
       const paths = this.getFilePaths(cardNum, primaryLang);
-      if (this.checkFileExists(paths.originalWebp)) {
+      // Count cards with EITHER .webp OR .avif
+      if (this.checkFileExists(paths.originalWebp) || this.checkFileExists(paths.originalAvif)) {
         this.sourceAvailability.disk.add(cardNumber);
       }
     }
