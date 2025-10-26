@@ -2,6 +2,7 @@
 
 import fs from "fs";
 import https from "https";
+import sharp from "sharp";
 import { rootFolder } from "./shared.js";
 
 const LORCAST_JSON_PATH = "./scripts/lorcast/010.json";
@@ -56,6 +57,32 @@ function download(url: string, filepath: string): Promise<string> {
 }
 
 /**
+ * Convert an image to WebP format
+ */
+async function convertToWebp(sourcePath: string): Promise<string> {
+  const webpPath = sourcePath.replace(/\.(avif|jpg|jpeg|png)$/i, ".webp");
+
+  // Skip if webp already exists
+  if (fs.existsSync(webpPath)) {
+    console.log(`WebP version already exists: ${webpPath}`);
+    return webpPath;
+  }
+
+  console.log(`Converting to WebP: ${webpPath}`);
+
+  try {
+    await sharp(sourcePath)
+      .webp({ quality: 90 })
+      .toFile(webpPath);
+
+    return webpPath;
+  } catch (error) {
+    console.error(`Error converting ${sourcePath} to WebP:`, (error as Error).message);
+    throw error;
+  }
+}
+
+/**
  * Download image for a card
  */
 async function downloadCard(card: LorcastCard): Promise<void> {
@@ -98,6 +125,9 @@ async function downloadCard(card: LorcastCard): Promise<void> {
   
   try {
     await download(url, destination);
+
+    // Convert to WebP
+    await convertToWebp(destination);
   } catch (error) {
     console.error(`Error downloading ${url}:`, (error as Error).message);
     throw error;
