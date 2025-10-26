@@ -4,7 +4,7 @@
 import fs from "fs";
 import sharp from "sharp";
 
-const VALIDATION_REPORT = "./validation-report-1760644068576.json";
+const VALIDATION_REPORT = "./validation-report-010-EN-1761489287250.json";
 const TARGET_WIDTH = 734;
 const TARGET_HEIGHT = 1024;
 

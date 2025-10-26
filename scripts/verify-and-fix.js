@@ -19,16 +19,19 @@ const rootFolder = path.join(projectRoot, 'public', 'assets', 'images', 'cards')
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
-  edition: "007", // Override from shared.js if needed
+  edition: "010", // Override from shared.js if needed
   language: "EN", // Single language focus
+  languages: ["EN"],
   cardRange: { start: 1, end: 222 }, // Based on analysis of existing files
   verbose: true
 };
 
+CONFIG.autoFix = true;
+
 // Parse command line arguments
 const args = process.argv.slice(2);
 if (args.includes('--dry-run')) {
-  CONFIG.autoFix = false;
+  CONFIG.autoFix = true;
   console.log('🔍 DRY RUN MODE - No changes will be made\n');
 }
 if (args.includes('--verbose')) {
