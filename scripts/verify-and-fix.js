@@ -19,14 +19,10 @@ const rootFolder = path.join(projectRoot, 'public', 'assets', 'images', 'cards')
 
 // Configuration - can be modified for different sets/languages
 const CONFIG = {
-  edition: "010",
-  languages: ["EN"], // Languages to process
-  cardRange: { start: 1, end: 242 }, // Set 010 has 204 regular cards + enchanted variants up to 242
-  autoFix: true, // Set to false for dry-run (report only)
-  skipVariants: false, // Set 010 HAS variants (art_only, art_and_name)
-  downloadSource: "all", // "dreamborn", "ravensburg", "lorcast", or "all" (tries all in priority order)
-  verbose: false, // Detailed logging
-  tolerancePx: 2 // Tolerance for dimension differences (±2px)
+  edition: "007", // Override from shared.js if needed
+  language: "EN", // Single language focus
+  cardRange: { start: 1, end: 222 }, // Based on analysis of existing files
+  verbose: true
 };
 
 // Parse command line arguments

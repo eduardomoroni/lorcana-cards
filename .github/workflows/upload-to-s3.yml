@@ -13,7 +13,8 @@ concurrency:
 
 jobs:
   upload:
-    runs-on: ubuntu-latest
+#    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
 
     steps:
       - name: Checkout repository
