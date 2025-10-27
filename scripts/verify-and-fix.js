@@ -22,7 +22,7 @@ const CONFIG = {
   edition: "010", // Override from shared.js if needed
   language: "EN", // Single language focus
   languages: ["EN"],
-  cardRange: { start: 1, end: 222 }, // Based on analysis of existing files
+  cardRange: { start: 1, end: 242 }, // Based on analysis of existing files
   verbose: true
 };
 
