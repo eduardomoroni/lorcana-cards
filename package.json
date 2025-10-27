@@ -5,6 +5,7 @@
   "scripts": {
     "delete-webp": "bun run scripts/delete-webp.cjs",
     "delete-avif": "bun run scripts/delete-avif.cjs",
+    "cleanup-jpg": "bun run scripts/cleanup-jpg.ts",
     "deploy-s3": "aws s3 cp ./public s3://lorcanito-images --recursive --cache-control \"max-age=31536000, immutable\"",
     "deploy-s3-en-009": "aws s3 cp ./public/assets/images/cards/EN/009 s3://lorcanito-images/assets/images/cards/EN/009 --recursive --cache-control \"max-age=31536000, immutable\"",
     "sync-s3": "aws s3 sync ./public s3://lorcanito-images --cache-control \"max-age=31536000, immutable\"",

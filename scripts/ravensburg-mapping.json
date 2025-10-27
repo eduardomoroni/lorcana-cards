@@ -1,5 +1,23 @@
 [
   {
+    "name": "Baloo",
+    "set": "010",
+    "cardNumber": "001",
+    "identifier": "1/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/1_cb1a0b5d95157e7641ce5e77b22e824bbca3981a.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Baloo",
+    "set": "010",
+    "cardNumber": "001",
+    "identifier": "1/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/1_cb1a0b5d95157e7641ce5e77b22e824bbca3981a.jpg",
+    "rarity": "RARE"
+  },
+  {
     "name": "Gaston",
     "set": "010",
     "cardNumber": "002",
@@ -18,6 +36,150 @@
     "rarity": "UNCOMMON"
   },
   {
+    "name": "Rapunzel",
+    "set": "010",
+    "cardNumber": "003",
+    "identifier": "3/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/3_fb52ab7e41b32692bcf120fb7760b0eb4f2c0af3.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "Rapunzel",
+    "set": "010",
+    "cardNumber": "003",
+    "identifier": "3/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/3_fb52ab7e41b32692bcf120fb7760b0eb4f2c0af3.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "Headless Manhorse",
+    "set": "010",
+    "cardNumber": "004",
+    "identifier": "4/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/4_cb0411786b4be7dda264c3b5c2a8dd0d958747af.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Headless Manhorse",
+    "set": "010",
+    "cardNumber": "004",
+    "identifier": "4/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/4_cb0411786b4be7dda264c3b5c2a8dd0d958747af.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Higgins",
+    "set": "010",
+    "cardNumber": "005",
+    "identifier": "5/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/5_81c945c3775f09fc4558c4ff5e9e05c82c846b2a.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Higgins",
+    "set": "010",
+    "cardNumber": "005",
+    "identifier": "5/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/5_81c945c3775f09fc4558c4ff5e9e05c82c846b2a.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Rajah",
+    "set": "010",
+    "cardNumber": "006",
+    "identifier": "6/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/6_f3e8cbaf1f7d32acf45b5f025bf61918087bfd3f.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Rajah",
+    "set": "010",
+    "cardNumber": "006",
+    "identifier": "6/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/6_f3e8cbaf1f7d32acf45b5f025bf61918087bfd3f.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Eilonwy",
+    "set": "010",
+    "cardNumber": "007",
+    "identifier": "7/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/7_faed64adf621d58a75b274ce829053d5b429d823.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Eilonwy",
+    "set": "010",
+    "cardNumber": "007",
+    "identifier": "7/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/7_faed64adf621d58a75b274ce829053d5b429d823.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Scrooge McDuck",
+    "set": "010",
+    "cardNumber": "008",
+    "identifier": "8/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/8_b07eee5dc70ce396dc9360ed0ded0fdb2b22c905.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Scrooge McDuck",
+    "set": "010",
+    "cardNumber": "008",
+    "identifier": "8/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/8_b07eee5dc70ce396dc9360ed0ded0fdb2b22c905.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Webby Vanderquack",
+    "set": "010",
+    "cardNumber": "009",
+    "identifier": "9/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/9_5068c07b52621dc17a928f61acf183d3d0daa293.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Webby Vanderquack",
+    "set": "010",
+    "cardNumber": "009",
+    "identifier": "9/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/9_5068c07b52621dc17a928f61acf183d3d0daa293.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Gurgi",
+    "set": "010",
+    "cardNumber": "010",
+    "identifier": "10/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/10_62e15c196b5edb2e7b3f9cd8e83f685e21bcdcce.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Gurgi",
+    "set": "010",
+    "cardNumber": "010",
+    "identifier": "10/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/10_62e15c196b5edb2e7b3f9cd8e83f685e21bcdcce.jpg",
+    "rarity": "COMMON"
+  },
+  {
     "name": "Mrs. Beakley",
     "set": "010",
     "cardNumber": "011",
@@ -34,6 +196,96 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/11_036c19cbf6d900848d7163fb95da8405d319d181.jpg",
     "rarity": "COMMON"
+  },
+  {
+    "name": "Bagheera",
+    "set": "010",
+    "cardNumber": "012",
+    "identifier": "12/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/12_de7db3d1f1a044087674392dbeec35b5e71583b7.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Bagheera",
+    "set": "010",
+    "cardNumber": "012",
+    "identifier": "12/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/12_de7db3d1f1a044087674392dbeec35b5e71583b7.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Shanti",
+    "set": "010",
+    "cardNumber": "013",
+    "identifier": "13/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/13_3caeb1eab5ac7cf3bd1f8ce0da4c35ae588a2e63.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Shanti",
+    "set": "010",
+    "cardNumber": "013",
+    "identifier": "13/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/13_3caeb1eab5ac7cf3bd1f8ce0da4c35ae588a2e63.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Flash",
+    "set": "010",
+    "cardNumber": "014",
+    "identifier": "14/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/14_d2e6581496a0a7545f0ef3ccb7fcf288e54f0b69.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Flash",
+    "set": "010",
+    "cardNumber": "014",
+    "identifier": "14/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/14_d2e6581496a0a7545f0ef3ccb7fcf288e54f0b69.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Taran",
+    "set": "010",
+    "cardNumber": "015",
+    "identifier": "15/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/15_23efe6fc7a8e650ad3ce395bdfa28c3bf723b1b6.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Taran",
+    "set": "010",
+    "cardNumber": "015",
+    "identifier": "15/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/15_23efe6fc7a8e650ad3ce395bdfa28c3bf723b1b6.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Sebastian",
+    "set": "010",
+    "cardNumber": "016",
+    "identifier": "16/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/16_5d11077f11907c383a6e198d408f648191f11256.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Sebastian",
+    "set": "010",
+    "cardNumber": "016",
+    "identifier": "16/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/16_5d11077f11907c383a6e198d408f648191f11256.jpg",
+    "rarity": "RARE"
   },
   {
     "name": "Ariel",
@@ -70,6 +322,24 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/18_88d1ffb5f9377cafbb835c2b073fae10b1f57488.jpg",
     "rarity": "RARE"
+  },
+  {
+    "name": "Mowgli",
+    "set": "010",
+    "cardNumber": "019",
+    "identifier": "19/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/19_536ca4c600928a45bc8095a3badf0ded88cbfcb6.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Mowgli",
+    "set": "010",
+    "cardNumber": "019",
+    "identifier": "19/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/19_536ca4c600928a45bc8095a3badf0ded88cbfcb6.jpg",
+    "rarity": "SUPER"
   },
   {
     "name": "Simba",
@@ -99,6 +369,24 @@
     "rarity": "SUPER"
   },
   {
+    "name": "Goofy",
+    "set": "010",
+    "cardNumber": "021",
+    "identifier": "21/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/21_90e2cca148f9196d92a5cf91c37ff77f34fe7bf2.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Goofy",
+    "set": "010",
+    "cardNumber": "021",
+    "identifier": "21/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/21_90e2cca148f9196d92a5cf91c37ff77f34fe7bf2.jpg",
+    "rarity": "COMMON"
+  },
+  {
     "name": "Della Duck",
     "set": "010",
     "cardNumber": "022",
@@ -115,6 +403,78 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/22_6d5b4c4f9ac67ba4cd517ccb08dd9603c29ed367.jpg",
     "rarity": "COMMON"
+  },
+  {
+    "name": "Mickey Mouse",
+    "set": "010",
+    "cardNumber": "023",
+    "identifier": "23/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/23_a41c6f05dcf3ec6424b3b0fd1eba13b9aba199d1.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Mickey Mouse",
+    "set": "010",
+    "cardNumber": "023",
+    "identifier": "23/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/23_a41c6f05dcf3ec6424b3b0fd1eba13b9aba199d1.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Goofy",
+    "set": "010",
+    "cardNumber": "024",
+    "identifier": "24/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/24_8a721ebe465f5ce960b10197b39dc87f8ceb859a.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Goofy",
+    "set": "010",
+    "cardNumber": "024",
+    "identifier": "24/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/24_8a721ebe465f5ce960b10197b39dc87f8ceb859a.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Gazelle",
+    "set": "010",
+    "cardNumber": "025",
+    "identifier": "25/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/25_27aa7b254fa0d2f368cc23424ce4ee65a69c5df0.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Gazelle",
+    "set": "010",
+    "cardNumber": "025",
+    "identifier": "25/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/25_27aa7b254fa0d2f368cc23424ce4ee65a69c5df0.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Minnie Mouse",
+    "set": "010",
+    "cardNumber": "035",
+    "identifier": "35/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/35_2f1e63cfe69cd5e04d1b51dab4c4342810425865.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Minnie Mouse",
+    "set": "010",
+    "cardNumber": "035",
+    "identifier": "35/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/35_2f1e63cfe69cd5e04d1b51dab4c4342810425865.jpg",
+    "rarity": "RARE"
   },
   {
     "name": "The Horned King",
@@ -135,6 +495,24 @@
     "rarity": "SUPER"
   },
   {
+    "name": "Gwythaint",
+    "set": "010",
+    "cardNumber": "037",
+    "identifier": "37/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/37_febee1e8aec13e84c2509693dc8dd201c3fb7f04.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Gwythaint",
+    "set": "010",
+    "cardNumber": "037",
+    "identifier": "37/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/37_febee1e8aec13e84c2509693dc8dd201c3fb7f04.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
     "name": "The Horned King",
     "set": "010",
     "cardNumber": "038",
@@ -150,6 +528,60 @@
     "identifier": "38/204 EN 10",
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/38_5db97d401a646d21ebd04fb3c3d5f11b8ce72ecd.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Cauldron Born",
+    "set": "010",
+    "cardNumber": "039",
+    "identifier": "39/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/39_e83d1331a9d9055f1a429cac1fb3a4841f58bd62.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Cauldron Born",
+    "set": "010",
+    "cardNumber": "039",
+    "identifier": "39/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/39_e83d1331a9d9055f1a429cac1fb3a4841f58bd62.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Demona",
+    "set": "010",
+    "cardNumber": "040",
+    "identifier": "40/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/40_51d10a90c5d290054a57671e08776ba4b257979e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Demona",
+    "set": "010",
+    "cardNumber": "040",
+    "identifier": "40/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/40_51d10a90c5d290054a57671e08776ba4b257979e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Magica De Spell",
+    "set": "010",
+    "cardNumber": "041",
+    "identifier": "41/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/41_e74ed1c08ac51b68b17a432277aad7421fc1502d.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Magica De Spell",
+    "set": "010",
+    "cardNumber": "041",
+    "identifier": "41/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/41_e74ed1c08ac51b68b17a432277aad7421fc1502d.jpg",
     "rarity": "COMMON"
   },
   {
@@ -169,6 +601,24 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/42_526ad5a21ab13a73619c463402bbf4543652c820.jpg",
     "rarity": "COMMON"
+  },
+  {
+    "name": "Iago",
+    "set": "010",
+    "cardNumber": "043",
+    "identifier": "43/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/43_0eae4c4b662bf5fe1ee0422275df76c4603196f3.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Iago",
+    "set": "010",
+    "cardNumber": "043",
+    "identifier": "43/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/43_0eae4c4b662bf5fe1ee0422275df76c4603196f3.jpg",
+    "rarity": "UNCOMMON"
   },
   {
     "name": "Violet Sabrewing",
@@ -204,6 +654,24 @@
     "identifier": "45/204 EN 10",
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/45_c7a6faccadcf745884e130897be0002dc382d967.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Mushu",
+    "set": "010",
+    "cardNumber": "046",
+    "identifier": "46/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/46_2d4503e5196d25120c73b7b987f91aca569f1cdf.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Mushu",
+    "set": "010",
+    "cardNumber": "046",
+    "identifier": "46/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/46_2d4503e5196d25120c73b7b987f91aca569f1cdf.jpg",
     "rarity": "COMMON"
   },
   {
@@ -243,6 +711,114 @@
     "rarity": "UNCOMMON"
   },
   {
+    "name": "The Horned King",
+    "set": "010",
+    "cardNumber": "049",
+    "identifier": "49/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/49_e60881faefdef07ea469cfd7493b74753f0a99ec.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Horned King",
+    "set": "010",
+    "cardNumber": "049",
+    "identifier": "49/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/49_e60881faefdef07ea469cfd7493b74753f0a99ec.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Creeper",
+    "set": "010",
+    "cardNumber": "050",
+    "identifier": "50/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/50_150019444656dd0abf4f4b214387539df667ed71.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Creeper",
+    "set": "010",
+    "cardNumber": "050",
+    "identifier": "50/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/50_150019444656dd0abf4f4b214387539df667ed71.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Coldstone",
+    "set": "010",
+    "cardNumber": "051",
+    "identifier": "51/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/51_80c592a3ca699c3374da65654ef4a9cbb5dfe491.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Coldstone",
+    "set": "010",
+    "cardNumber": "051",
+    "identifier": "51/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/51_80c592a3ca699c3374da65654ef4a9cbb5dfe491.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Magica De Spell",
+    "set": "010",
+    "cardNumber": "052",
+    "identifier": "52/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/52_bc3627eea7d5e680f95639bf759390b73bf9c5d6.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Magica De Spell",
+    "set": "010",
+    "cardNumber": "052",
+    "identifier": "52/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/52_bc3627eea7d5e680f95639bf759390b73bf9c5d6.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Nana",
+    "set": "010",
+    "cardNumber": "053",
+    "identifier": "53/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/53_8560c88a5cbaedcecaceec91b80e91cc52cffe5a.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Nana",
+    "set": "010",
+    "cardNumber": "053",
+    "identifier": "53/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/53_8560c88a5cbaedcecaceec91b80e91cc52cffe5a.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Magica De Spell",
+    "set": "010",
+    "cardNumber": "054",
+    "identifier": "54/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/54_2f7b80e2ebadc844a7163e187a0313012289df8d.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Magica De Spell",
+    "set": "010",
+    "cardNumber": "054",
+    "identifier": "54/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/54_2f7b80e2ebadc844a7163e187a0313012289df8d.jpg",
+    "rarity": "SUPER"
+  },
+  {
     "name": "Demona",
     "set": "010",
     "cardNumber": "055",
@@ -279,6 +855,42 @@
     "rarity": "LEGENDARY"
   },
   {
+    "name": "Olaf",
+    "set": "010",
+    "cardNumber": "057",
+    "identifier": "57/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/57_06e3552487333d1a9b05d65f6b177ca10805a280.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Olaf",
+    "set": "010",
+    "cardNumber": "057",
+    "identifier": "57/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/57_06e3552487333d1a9b05d65f6b177ca10805a280.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Merlin",
+    "set": "010",
+    "cardNumber": "058",
+    "identifier": "58/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/58_7069520af6d9e30c00156a48a752dec71a142165.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Merlin",
+    "set": "010",
+    "cardNumber": "058",
+    "identifier": "58/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/58_7069520af6d9e30c00156a48a752dec71a142165.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
     "name": "Ursula",
     "set": "010",
     "cardNumber": "059",
@@ -295,6 +907,96 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/59_cb1a93633a0911a84a52281393d83b23f284907c.jpg",
     "rarity": "RARE"
+  },
+  {
+    "name": "Cheshire Cat",
+    "set": "010",
+    "cardNumber": "060",
+    "identifier": "60/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/60_1b85e0c0de6462be1083080957c4240fb9c9e8e7.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Cheshire Cat",
+    "set": "010",
+    "cardNumber": "060",
+    "identifier": "60/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/60_1b85e0c0de6462be1083080957c4240fb9c9e8e7.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Baloo",
+    "set": "010",
+    "cardNumber": "069",
+    "identifier": "69/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/69_b75eea83c409fc60b89a487ab562d5129c558f47.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Baloo",
+    "set": "010",
+    "cardNumber": "069",
+    "identifier": "69/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/69_b75eea83c409fc60b89a487ab562d5129c558f47.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Big Nose",
+    "set": "010",
+    "cardNumber": "070",
+    "identifier": "70/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/70_0064933944cf9c162daa7a3507fadea7651e06f2.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Big Nose",
+    "set": "010",
+    "cardNumber": "070",
+    "identifier": "70/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/70_0064933944cf9c162daa7a3507fadea7651e06f2.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Flotsam",
+    "set": "010",
+    "cardNumber": "071",
+    "identifier": "71/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/71_fcd84d78e692826344348895cbc360025ee5a75a.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Flotsam",
+    "set": "010",
+    "cardNumber": "071",
+    "identifier": "71/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/71_fcd84d78e692826344348895cbc360025ee5a75a.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Kaa",
+    "set": "010",
+    "cardNumber": "072",
+    "identifier": "72/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/72_994e836a47868ce98e271cfee3d0b8323082643a.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Kaa",
+    "set": "010",
+    "cardNumber": "072",
+    "identifier": "72/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/72_994e836a47868ce98e271cfee3d0b8323082643a.jpg",
+    "rarity": "COMMON"
   },
   {
     "name": "Webby Vanderquack",
@@ -315,6 +1017,168 @@
     "rarity": "COMMON"
   },
   {
+    "name": "Finnick",
+    "set": "010",
+    "cardNumber": "074",
+    "identifier": "74/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/74_1a416ccee8a368953e5f9241496f829fb714236f.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Finnick",
+    "set": "010",
+    "cardNumber": "074",
+    "identifier": "74/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/74_1a416ccee8a368953e5f9241496f829fb714236f.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Vladimir",
+    "set": "010",
+    "cardNumber": "075",
+    "identifier": "75/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/75_9b09f30a469919276111577aa0f701dfc1343ca9.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Vladimir",
+    "set": "010",
+    "cardNumber": "075",
+    "identifier": "75/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/75_9b09f30a469919276111577aa0f701dfc1343ca9.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Flintheart Glomgold",
+    "set": "010",
+    "cardNumber": "076",
+    "identifier": "76/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/76_c724eac0b150141f9e9d93a6748283b91a634cd3.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Flintheart Glomgold",
+    "set": "010",
+    "cardNumber": "076",
+    "identifier": "76/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/76_c724eac0b150141f9e9d93a6748283b91a634cd3.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Jetsam",
+    "set": "010",
+    "cardNumber": "077",
+    "identifier": "77/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/77_f0137dca2cc42842d1d96935be1e4953850bfd6e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Jetsam",
+    "set": "010",
+    "cardNumber": "077",
+    "identifier": "77/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/77_f0137dca2cc42842d1d96935be1e4953850bfd6e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Hook Hand",
+    "set": "010",
+    "cardNumber": "078",
+    "identifier": "78/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/78_788d8c304d3191cb8468352f041922fdecad2b77.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Hook Hand",
+    "set": "010",
+    "cardNumber": "078",
+    "identifier": "78/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/78_788d8c304d3191cb8468352f041922fdecad2b77.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Kaa",
+    "set": "010",
+    "cardNumber": "079",
+    "identifier": "79/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/79_9812bf7025c7af4586c10c89a616abd500663199.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Kaa",
+    "set": "010",
+    "cardNumber": "079",
+    "identifier": "79/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/79_9812bf7025c7af4586c10c89a616abd500663199.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Emily Quackfaster",
+    "set": "010",
+    "cardNumber": "080",
+    "identifier": "80/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/80_e85a8cc9600264a9d63a10692f46e791fbbc68f9.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Emily Quackfaster",
+    "set": "010",
+    "cardNumber": "080",
+    "identifier": "80/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/80_e85a8cc9600264a9d63a10692f46e791fbbc68f9.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Flynn Rider",
+    "set": "010",
+    "cardNumber": "081",
+    "identifier": "81/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/81_8917b27dfc11c63e46b369fd71b4605f52b95575.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Flynn Rider",
+    "set": "010",
+    "cardNumber": "081",
+    "identifier": "81/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/81_8917b27dfc11c63e46b369fd71b4605f52b95575.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Bellwether",
+    "set": "010",
+    "cardNumber": "082",
+    "identifier": "82/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/82_9580a302b9a71ffffab898cfa6200db60c30d8f6.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Bellwether",
+    "set": "010",
+    "cardNumber": "082",
+    "identifier": "82/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/82_9580a302b9a71ffffab898cfa6200db60c30d8f6.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
     "name": "Launchpad",
     "set": "010",
     "cardNumber": "083",
@@ -331,6 +1195,24 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/83_803e6c6050b3667628340c12559169000d06d759.jpg",
     "rarity": "COMMON"
+  },
+  {
+    "name": "Penumbra",
+    "set": "010",
+    "cardNumber": "084",
+    "identifier": "84/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/84_dd8d3efc6b5403647fb724d99dc1d942d83df5bd.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Penumbra",
+    "set": "010",
+    "cardNumber": "084",
+    "identifier": "84/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/84_dd8d3efc6b5403647fb724d99dc1d942d83df5bd.jpg",
+    "rarity": "RARE"
   },
   {
     "name": "Baloo",
@@ -378,6 +1260,78 @@
     "rarity": "RARE"
   },
   {
+    "name": "Goldie O'Gilt",
+    "set": "010",
+    "cardNumber": "087",
+    "identifier": "87/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/87_aea33a63a5efc97cf0ecc386bdd6ea0f172897c0.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Goldie O'Gilt",
+    "set": "010",
+    "cardNumber": "087",
+    "identifier": "87/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/87_aea33a63a5efc97cf0ecc386bdd6ea0f172897c0.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Shere Khan",
+    "set": "010",
+    "cardNumber": "088",
+    "identifier": "88/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/88_4f901198e13ab51eb8fe0b73cecb62c14b33a7fa.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "Shere Khan",
+    "set": "010",
+    "cardNumber": "088",
+    "identifier": "88/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/88_4f901198e13ab51eb8fe0b73cecb62c14b33a7fa.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "Scrooge McDuck",
+    "set": "010",
+    "cardNumber": "089",
+    "identifier": "89/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/89_ec5228e5c63464064b1d99fca8ac3cbc1d90e2f7.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Scrooge McDuck",
+    "set": "010",
+    "cardNumber": "089",
+    "identifier": "89/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/89_ec5228e5c63464064b1d99fca8ac3cbc1d90e2f7.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Akela",
+    "set": "010",
+    "cardNumber": "090",
+    "identifier": "90/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/90_08a686ae3504024dea102e70a96cb1a03085348e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Akela",
+    "set": "010",
+    "cardNumber": "090",
+    "identifier": "90/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/90_08a686ae3504024dea102e70a96cb1a03085348e.jpg",
+    "rarity": "COMMON"
+  },
+  {
     "name": "Goofy",
     "set": "010",
     "cardNumber": "091",
@@ -394,6 +1348,42 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/91_a45c71be705e9e73c49c19025ad077b67e552337.jpg",
     "rarity": "RARE"
+  },
+  {
+    "name": "Little John",
+    "set": "010",
+    "cardNumber": "092",
+    "identifier": "92/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/92_c2007bbb8a165f660ed351924fcec4cc1829403b.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Little John",
+    "set": "010",
+    "cardNumber": "092",
+    "identifier": "92/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/92_c2007bbb8a165f660ed351924fcec4cc1829403b.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Webby Vanderquack",
+    "set": "010",
+    "cardNumber": "093",
+    "identifier": "93/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/93_66169bcf6a8afc83d644ac0e3231ea2163e2c333.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "Webby Vanderquack",
+    "set": "010",
+    "cardNumber": "093",
+    "identifier": "93/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/93_66169bcf6a8afc83d644ac0e3231ea2163e2c333.jpg",
+    "rarity": "LEGENDARY"
   },
   {
     "name": "Diablo",
@@ -414,6 +1404,276 @@
     "rarity": "RARE"
   },
   {
+    "name": "Ares",
+    "set": "010",
+    "cardNumber": "104",
+    "identifier": "104/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/104_be50ac9fb22a64cb564ba071e0009c715a2b162b.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Ares",
+    "set": "010",
+    "cardNumber": "104",
+    "identifier": "104/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/104_be50ac9fb22a64cb564ba071e0009c715a2b162b.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Peter Pan",
+    "set": "010",
+    "cardNumber": "105",
+    "identifier": "105/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/105_597ec4b2844cc0ef6fbd295d4c9b7c88fc773871.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Peter Pan",
+    "set": "010",
+    "cardNumber": "105",
+    "identifier": "105/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/105_597ec4b2844cc0ef6fbd295d4c9b7c88fc773871.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Tinker Bell",
+    "set": "010",
+    "cardNumber": "106",
+    "identifier": "106/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/106_373c1685d19f7fd5de1daf89f6ea66b093cc04f0.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Tinker Bell",
+    "set": "010",
+    "cardNumber": "106",
+    "identifier": "106/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/106_373c1685d19f7fd5de1daf89f6ea66b093cc04f0.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Raksha",
+    "set": "010",
+    "cardNumber": "107",
+    "identifier": "107/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/107_23cf468f5a713f8cad9bf9a2ce1b758ec717fa7e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Raksha",
+    "set": "010",
+    "cardNumber": "107",
+    "identifier": "107/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/107_23cf468f5a713f8cad9bf9a2ce1b758ec717fa7e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Shere Khan",
+    "set": "010",
+    "cardNumber": "108",
+    "identifier": "108/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/108_3074e2e236c25fb3d67b6da3aa2ea2989b3dc7b5.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Shere Khan",
+    "set": "010",
+    "cardNumber": "108",
+    "identifier": "108/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/108_3074e2e236c25fb3d67b6da3aa2ea2989b3dc7b5.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Rama",
+    "set": "010",
+    "cardNumber": "109",
+    "identifier": "109/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/109_708a022d227920c80924f2b2b0ec6d2dfe96c736.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Rama",
+    "set": "010",
+    "cardNumber": "109",
+    "identifier": "109/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/109_708a022d227920c80924f2b2b0ec6d2dfe96c736.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Mother Gothel",
+    "set": "010",
+    "cardNumber": "110",
+    "identifier": "110/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/110_dd1b010f5c859edf8ccbcee33f867d5ad9aa2483.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Mother Gothel",
+    "set": "010",
+    "cardNumber": "110",
+    "identifier": "110/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/110_dd1b010f5c859edf8ccbcee33f867d5ad9aa2483.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Katrina Van Tassel",
+    "set": "010",
+    "cardNumber": "111",
+    "identifier": "111/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/111_1f1a3e6355f3a3bb9ad83a336b3c14759c25edf4.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Katrina Van Tassel",
+    "set": "010",
+    "cardNumber": "111",
+    "identifier": "111/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/111_1f1a3e6355f3a3bb9ad83a336b3c14759c25edf4.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Hermes",
+    "set": "010",
+    "cardNumber": "112",
+    "identifier": "112/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/112_19b955324ae43ae0b8add166e02b4a516d284b37.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Hermes",
+    "set": "010",
+    "cardNumber": "112",
+    "identifier": "112/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/112_19b955324ae43ae0b8add166e02b4a516d284b37.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Beast",
+    "set": "010",
+    "cardNumber": "113",
+    "identifier": "113/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/113_bca1834238648c8292f6e156ffca154ea133290f.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Beast",
+    "set": "010",
+    "cardNumber": "113",
+    "identifier": "113/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/113_bca1834238648c8292f6e156ffca154ea133290f.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Bronx",
+    "set": "010",
+    "cardNumber": "114",
+    "identifier": "114/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/114_bb4753f9ed5c3ccf14d09e1c09f053ce918370c4.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Bronx",
+    "set": "010",
+    "cardNumber": "114",
+    "identifier": "114/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/114_bb4753f9ed5c3ccf14d09e1c09f053ce918370c4.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Tinker Bell",
+    "set": "010",
+    "cardNumber": "115",
+    "identifier": "115/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/115_6e1d8e8215a3d4c7a744075f84ec3baba10e9ca3.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Tinker Bell",
+    "set": "010",
+    "cardNumber": "115",
+    "identifier": "115/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/115_6e1d8e8215a3d4c7a744075f84ec3baba10e9ca3.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "David Xanatos",
+    "set": "010",
+    "cardNumber": "116",
+    "identifier": "116/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/116_d8d2e0ee5bd82a685bf29b5e5ff574bb893a4d2f.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "David Xanatos",
+    "set": "010",
+    "cardNumber": "116",
+    "identifier": "116/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/116_d8d2e0ee5bd82a685bf29b5e5ff574bb893a4d2f.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Hans",
+    "set": "010",
+    "cardNumber": "117",
+    "identifier": "117/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/117_b0250d920777113d24e17f08f9eea9421f4b3d70.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Hans",
+    "set": "010",
+    "cardNumber": "117",
+    "identifier": "117/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/117_b0250d920777113d24e17f08f9eea9421f4b3d70.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Hercules",
+    "set": "010",
+    "cardNumber": "118",
+    "identifier": "118/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/118_c1161fb30b9c1bcd95c1bd00d8e7fc4ae3e75daf.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "Hercules",
+    "set": "010",
+    "cardNumber": "118",
+    "identifier": "118/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/118_c1161fb30b9c1bcd95c1bd00d8e7fc4ae3e75daf.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
     "name": "Goliath",
     "set": "010",
     "cardNumber": "119",
@@ -430,6 +1690,42 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/119_34d313f6d81a1d0cf5da56a6c080bdc05268518f.jpg",
     "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Brooklyn",
+    "set": "010",
+    "cardNumber": "120",
+    "identifier": "120/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/120_9d7d22b183b8edf6cbde494a7fc50b1fd2f42c3a.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Brooklyn",
+    "set": "010",
+    "cardNumber": "120",
+    "identifier": "120/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/120_9d7d22b183b8edf6cbde494a7fc50b1fd2f42c3a.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Donald Duck",
+    "set": "010",
+    "cardNumber": "121",
+    "identifier": "121/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/121_d36eab96f23a0cb86f534c5c448d7520ffee7c09.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Donald Duck",
+    "set": "010",
+    "cardNumber": "121",
+    "identifier": "121/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/121_d36eab96f23a0cb86f534c5c448d7520ffee7c09.jpg",
+    "rarity": "RARE"
   },
   {
     "name": "Elisa Maza",
@@ -450,6 +1746,132 @@
     "rarity": "RARE"
   },
   {
+    "name": "Aladdin",
+    "set": "010",
+    "cardNumber": "123",
+    "identifier": "123/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/123_d76508c76e78e45f3c22cd01376e9d0247727f5e.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Aladdin",
+    "set": "010",
+    "cardNumber": "123",
+    "identifier": "123/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/123_d76508c76e78e45f3c22cd01376e9d0247727f5e.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Lady Tremaine",
+    "set": "010",
+    "cardNumber": "124",
+    "identifier": "124/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/124_be7e248d7fda7b5523634e20f686544ce97e74b0.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Lady Tremaine",
+    "set": "010",
+    "cardNumber": "124",
+    "identifier": "124/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/124_be7e248d7fda7b5523634e20f686544ce97e74b0.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "The Headless Horseman",
+    "set": "010",
+    "cardNumber": "125",
+    "identifier": "125/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/125_9972a2635cc3e30a59272aabab81b5f17aa25ee2.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "The Headless Horseman",
+    "set": "010",
+    "cardNumber": "125",
+    "identifier": "125/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/125_9972a2635cc3e30a59272aabab81b5f17aa25ee2.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "Mulan",
+    "set": "010",
+    "cardNumber": "126",
+    "identifier": "126/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/126_2db4f9490bc5ee2f1a8c6fc13b3863bb49080e7d.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Mulan",
+    "set": "010",
+    "cardNumber": "126",
+    "identifier": "126/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/126_2db4f9490bc5ee2f1a8c6fc13b3863bb49080e7d.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Brom Bones",
+    "set": "010",
+    "cardNumber": "127",
+    "identifier": "127/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/127_f150aef09bce36f6d92b5708f6d8122e17fa5ee2.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Brom Bones",
+    "set": "010",
+    "cardNumber": "127",
+    "identifier": "127/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/127_f150aef09bce36f6d92b5708f6d8122e17fa5ee2.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Shere Khan",
+    "set": "010",
+    "cardNumber": "128",
+    "identifier": "128/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/128_6e7a7356576c075b6850762fccabe3bacaf50215.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Shere Khan",
+    "set": "010",
+    "cardNumber": "128",
+    "identifier": "128/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/128_6e7a7356576c075b6850762fccabe3bacaf50215.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Judy Hopps",
+    "set": "010",
+    "cardNumber": "137",
+    "identifier": "137/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/137_30d8cb2cb3712386a7bc680212e469af140f807e.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Judy Hopps",
+    "set": "010",
+    "cardNumber": "137",
+    "identifier": "137/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/137_30d8cb2cb3712386a7bc680212e469af140f807e.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
     "name": "Hen Wen",
     "set": "010",
     "cardNumber": "138",
@@ -466,6 +1888,186 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/138_20b0fdb7b11fdb55c08d3b4bc05aafbdfa2a6e8b.jpg",
     "rarity": "COMMON"
+  },
+  {
+    "name": "Anna",
+    "set": "010",
+    "cardNumber": "139",
+    "identifier": "139/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/139_69a66c67d495c4ded0fb6f1de4e53a926267e294.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Anna",
+    "set": "010",
+    "cardNumber": "139",
+    "identifier": "139/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/139_69a66c67d495c4ded0fb6f1de4e53a926267e294.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Chef Louis",
+    "set": "010",
+    "cardNumber": "140",
+    "identifier": "140/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/140_c60b733cfca92154d6cb86e79f265cb1c417762f.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Chef Louis",
+    "set": "010",
+    "cardNumber": "140",
+    "identifier": "140/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/140_c60b733cfca92154d6cb86e79f265cb1c417762f.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Daisy Duck",
+    "set": "010",
+    "cardNumber": "141",
+    "identifier": "141/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/141_d783e50e319f3658d30a9b68cb6e0a936cbff8e0.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Daisy Duck",
+    "set": "010",
+    "cardNumber": "141",
+    "identifier": "141/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/141_d783e50e319f3658d30a9b68cb6e0a936cbff8e0.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Cri-Kee",
+    "set": "010",
+    "cardNumber": "142",
+    "identifier": "142/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/142_bf7018e8e62588d1b7171e331f81302aa6629f34.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Cri-Kee",
+    "set": "010",
+    "cardNumber": "142",
+    "identifier": "142/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/142_bf7018e8e62588d1b7171e331f81302aa6629f34.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Rapunzel",
+    "set": "010",
+    "cardNumber": "143",
+    "identifier": "143/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/143_8fbd751d486ce62a073001642823f80dbe6fcbd6.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Rapunzel",
+    "set": "010",
+    "cardNumber": "143",
+    "identifier": "143/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/143_8fbd751d486ce62a073001642823f80dbe6fcbd6.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Fergus McDuck",
+    "set": "010",
+    "cardNumber": "144",
+    "identifier": "144/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/144_f05d82152b8d20fbeffba7576aadd4b7c0a46e14.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Fergus McDuck",
+    "set": "010",
+    "cardNumber": "144",
+    "identifier": "144/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/144_f05d82152b8d20fbeffba7576aadd4b7c0a46e14.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Li Shang",
+    "set": "010",
+    "cardNumber": "145",
+    "identifier": "145/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/145_3a25446d3b997be2836ed844521bfd083e48f5a6.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Li Shang",
+    "set": "010",
+    "cardNumber": "145",
+    "identifier": "145/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/145_3a25446d3b997be2836ed844521bfd083e48f5a6.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Genie",
+    "set": "010",
+    "cardNumber": "146",
+    "identifier": "146/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/146_4b6a8b6b96f723ddb051950aeecdfa7fe7bb35bc.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Genie",
+    "set": "010",
+    "cardNumber": "146",
+    "identifier": "146/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/146_4b6a8b6b96f723ddb051950aeecdfa7fe7bb35bc.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Scuttle",
+    "set": "010",
+    "cardNumber": "147",
+    "identifier": "147/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/147_71a991c5151192e50dc16a94c84b11ef2a0859b1.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Scuttle",
+    "set": "010",
+    "cardNumber": "147",
+    "identifier": "147/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/147_71a991c5151192e50dc16a94c84b11ef2a0859b1.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Ichabod Crane",
+    "set": "010",
+    "cardNumber": "148",
+    "identifier": "148/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/148_d94dd97bc91ce80191a195ec7c42a121f2b20545.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Ichabod Crane",
+    "set": "010",
+    "cardNumber": "148",
+    "identifier": "148/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/148_d94dd97bc91ce80191a195ec7c42a121f2b20545.jpg",
+    "rarity": "RARE"
   },
   {
     "name": "Jasmine",
@@ -483,6 +2085,60 @@
     "identifier": "149/204 EN 10",
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/149_b4359bc624c45989864cb9bc5fa98f1560fb01aa.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Judy Hopps",
+    "set": "010",
+    "cardNumber": "150",
+    "identifier": "150/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/150_722eaaa57d6bd69ab2ae31afc40958db763fb56c.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Judy Hopps",
+    "set": "010",
+    "cardNumber": "150",
+    "identifier": "150/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/150_722eaaa57d6bd69ab2ae31afc40958db763fb56c.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Sultan",
+    "set": "010",
+    "cardNumber": "151",
+    "identifier": "151/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/151_ba513c19ccca2d599b1b6bb0af3a0776d061b187.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Sultan",
+    "set": "010",
+    "cardNumber": "151",
+    "identifier": "151/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/151_ba513c19ccca2d599b1b6bb0af3a0776d061b187.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Ichabod Crane",
+    "set": "010",
+    "cardNumber": "152",
+    "identifier": "152/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/152_563a176fd1593d176ea84f7f5e7472b397290395.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Ichabod Crane",
+    "set": "010",
+    "cardNumber": "152",
+    "identifier": "152/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/152_563a176fd1593d176ea84f7f5e7472b397290395.jpg",
     "rarity": "UNCOMMON"
   },
   {
@@ -567,6 +2223,78 @@
     "rarity": "SUPER"
   },
   {
+    "name": "Pluto",
+    "set": "010",
+    "cardNumber": "157",
+    "identifier": "157/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/157_9e8e68f550d09968de57b72da3257589093517e6.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Pluto",
+    "set": "010",
+    "cardNumber": "157",
+    "identifier": "157/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/157_9e8e68f550d09968de57b72da3257589093517e6.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Daisy Duck",
+    "set": "010",
+    "cardNumber": "158",
+    "identifier": "158/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/158_440a732fae1fee58b3acba6085b08132ca683f27.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Daisy Duck",
+    "set": "010",
+    "cardNumber": "158",
+    "identifier": "158/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/158_440a732fae1fee58b3acba6085b08132ca683f27.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Kristoff",
+    "set": "010",
+    "cardNumber": "159",
+    "identifier": "159/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/159_28c903fa6f7fa76494f161d0592d75e939071eea.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Kristoff",
+    "set": "010",
+    "cardNumber": "159",
+    "identifier": "159/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/159_28c903fa6f7fa76494f161d0592d75e939071eea.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Mickey Mouse",
+    "set": "010",
+    "cardNumber": "160",
+    "identifier": "160/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/160_49de40511ddabefcc3b7f8d7fcd842d298be60ac.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Mickey Mouse",
+    "set": "010",
+    "cardNumber": "160",
+    "identifier": "160/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/160_49de40511ddabefcc3b7f8d7fcd842d298be60ac.jpg",
+    "rarity": "COMMON"
+  },
+  {
     "name": "Robin Hood",
     "set": "010",
     "cardNumber": "171",
@@ -594,6 +2322,276 @@
     "rarity": "RARE"
   },
   {
+    "name": "Donald Duck",
+    "set": "010",
+    "cardNumber": "172",
+    "identifier": "172/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/172_f7a12501eaa080210d28ba44ffda28f1eff5f0d9.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Donald Duck",
+    "set": "010",
+    "cardNumber": "172",
+    "identifier": "172/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/172_f7a12501eaa080210d28ba44ffda28f1eff5f0d9.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Goliath",
+    "set": "010",
+    "cardNumber": "173",
+    "identifier": "173/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/173_02446272102753bbd8c707e080e6e2bb110cb0ca.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "Goliath",
+    "set": "010",
+    "cardNumber": "173",
+    "identifier": "173/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/173_02446272102753bbd8c707e080e6e2bb110cb0ca.jpg",
+    "rarity": "LEGENDARY"
+  },
+  {
+    "name": "The Headless Horseman",
+    "set": "010",
+    "cardNumber": "174",
+    "identifier": "174/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/174_8a43b0cb58caa809de17843994aff71485d07e87.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "The Headless Horseman",
+    "set": "010",
+    "cardNumber": "174",
+    "identifier": "174/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/174_8a43b0cb58caa809de17843994aff71485d07e87.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Clawhauser",
+    "set": "010",
+    "cardNumber": "175",
+    "identifier": "175/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/175_cb6a61eec7d560470604c0ce6606a834f6609c7e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Clawhauser",
+    "set": "010",
+    "cardNumber": "175",
+    "identifier": "175/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/175_cb6a61eec7d560470604c0ce6606a834f6609c7e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Francine",
+    "set": "010",
+    "cardNumber": "176",
+    "identifier": "176/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/176_5bae4a98b82698843867d70235f8cc36778af3ec.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Francine",
+    "set": "010",
+    "cardNumber": "176",
+    "identifier": "176/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/176_5bae4a98b82698843867d70235f8cc36778af3ec.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Inspector Tezuka",
+    "set": "010",
+    "cardNumber": "177",
+    "identifier": "177/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/177_1b6352c2c9b40262a999092a37ddd00b9781a3e0.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Inspector Tezuka",
+    "set": "010",
+    "cardNumber": "177",
+    "identifier": "177/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/177_1b6352c2c9b40262a999092a37ddd00b9781a3e0.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Nick Wilde",
+    "set": "010",
+    "cardNumber": "178",
+    "identifier": "178/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/178_7b413b5e1861348d95008c544e27ea7949b638b8.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Nick Wilde",
+    "set": "010",
+    "cardNumber": "178",
+    "identifier": "178/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/178_7b413b5e1861348d95008c544e27ea7949b638b8.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Basil",
+    "set": "010",
+    "cardNumber": "179",
+    "identifier": "179/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/179_a933f21a61541198da43f5f4ae58d49291b3e00e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Basil",
+    "set": "010",
+    "cardNumber": "179",
+    "identifier": "179/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/179_a933f21a61541198da43f5f4ae58d49291b3e00e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Hudson",
+    "set": "010",
+    "cardNumber": "180",
+    "identifier": "180/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/180_cd1cced6c985969553dbe65139d073036d4fce77.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Hudson",
+    "set": "010",
+    "cardNumber": "180",
+    "identifier": "180/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/180_cd1cced6c985969553dbe65139d073036d4fce77.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Minnie Mouse",
+    "set": "010",
+    "cardNumber": "181",
+    "identifier": "181/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/181_bd75c4906fb7d992b91c698fba9dd4bda9d12cc5.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Minnie Mouse",
+    "set": "010",
+    "cardNumber": "181",
+    "identifier": "181/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/181_bd75c4906fb7d992b91c698fba9dd4bda9d12cc5.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Black Heron",
+    "set": "010",
+    "cardNumber": "182",
+    "identifier": "182/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/182_9647595d0cfaee115fbac3138fd3f788444274bb.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Black Heron",
+    "set": "010",
+    "cardNumber": "182",
+    "identifier": "182/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/182_9647595d0cfaee115fbac3138fd3f788444274bb.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Lexington",
+    "set": "010",
+    "cardNumber": "183",
+    "identifier": "183/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/183_505c4e256f61303f1d69063e051115e0320bb179.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Lexington",
+    "set": "010",
+    "cardNumber": "183",
+    "identifier": "183/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/183_505c4e256f61303f1d69063e051115e0320bb179.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "David Xanatos",
+    "set": "010",
+    "cardNumber": "184",
+    "identifier": "184/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/184_e28abc268f0b1a8b854f48cf71dbec9f2c99c793.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "David Xanatos",
+    "set": "010",
+    "cardNumber": "184",
+    "identifier": "184/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/184_e28abc268f0b1a8b854f48cf71dbec9f2c99c793.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Chief Bogo",
+    "set": "010",
+    "cardNumber": "185",
+    "identifier": "185/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/185_a37fe8ccddb230a1e9e28514b99f80b83bdbef08.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Chief Bogo",
+    "set": "010",
+    "cardNumber": "185",
+    "identifier": "185/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/185_a37fe8ccddb230a1e9e28514b99f80b83bdbef08.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Twins",
+    "set": "010",
+    "cardNumber": "186",
+    "identifier": "186/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/186_bad435509ecbbb51c96d2f79872013b6fdc59ea0.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "The Twins",
+    "set": "010",
+    "cardNumber": "186",
+    "identifier": "186/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/186_bad435509ecbbb51c96d2f79872013b6fdc59ea0.jpg",
+    "rarity": "COMMON"
+  },
+  {
     "name": "Nick Wilde",
     "set": "010",
     "cardNumber": "187",
@@ -609,6 +2607,24 @@
     "identifier": "187/204 EN 10",
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/187_6e4ce4d8cafb64ea4eacb1036d63a5449c36b1b8.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Mayor Winddancer",
+    "set": "010",
+    "cardNumber": "188",
+    "identifier": "188/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/188_962efc02931a28f879f3986f105c006e29f0efac.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Mayor Winddancer",
+    "set": "010",
+    "cardNumber": "188",
+    "identifier": "188/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/188_962efc02931a28f879f3986f105c006e29f0efac.jpg",
     "rarity": "RARE"
   },
   {
@@ -648,6 +2664,42 @@
     "rarity": "UNCOMMON"
   },
   {
+    "name": "Pluto",
+    "set": "010",
+    "cardNumber": "191",
+    "identifier": "191/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/191_73722c17f20939ab18cafe2d26524f977497bf14.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Pluto",
+    "set": "010",
+    "cardNumber": "191",
+    "identifier": "191/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/191_73722c17f20939ab18cafe2d26524f977497bf14.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Fairy Godmother",
+    "set": "010",
+    "cardNumber": "192",
+    "identifier": "192/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/192_eb19530d334061f223ed0787de24d7097b23e7e8.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Fairy Godmother",
+    "set": "010",
+    "cardNumber": "192",
+    "identifier": "192/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/192_eb19530d334061f223ed0787de24d7097b23e7e8.jpg",
+    "rarity": "SUPER"
+  },
+  {
     "name": "Zeus",
     "set": "010",
     "cardNumber": "193",
@@ -664,6 +2716,33 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/193_8fd4c3ec069cab71186e951bba5cece522c2b433.jpg",
     "rarity": "UNCOMMON"
+  },
+  {
+    "name": "The Headless Horseman",
+    "set": "010",
+    "cardNumber": "194",
+    "identifier": "194/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/194_3f70f74f29df3f160f55725cd6e9b9dfd47144d6.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "The Headless Horseman",
+    "set": "010",
+    "cardNumber": "194",
+    "identifier": "194/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/194_3f70f74f29df3f160f55725cd6e9b9dfd47144d6.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Goofy",
+    "set": "010",
+    "cardNumber": "205",
+    "identifier": "205/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/205_c8155f8eb7a6f9006ca31b46f8840b6514a09b78.jpg",
+    "rarity": "EPIC"
   },
   {
     "name": "Gaston",
@@ -672,6 +2751,51 @@
     "identifier": "206/204 EN 10",
     "variantId": "Regular",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/206_8c77e26a4d86fe4f3fd3e400af576d8b8615c447.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Elsa",
+    "set": "010",
+    "cardNumber": "208",
+    "identifier": "208/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/208_853f1eb6483b35818bb3f2abcd2d73ed3e6d555a.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Merlin",
+    "set": "010",
+    "cardNumber": "209",
+    "identifier": "209/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/209_81c7cf8f9fa4d51b5512bffbb350df5b29156f84.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "The Horned King",
+    "set": "010",
+    "cardNumber": "210",
+    "identifier": "210/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/210_d20dc0fdf50c283405676fb6ff15961ca8026ecf.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Webby Vanderquack",
+    "set": "010",
+    "cardNumber": "211",
+    "identifier": "211/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/211_6b952a0779490eb30f47425d6aaf16f7e3ce2c53.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Kaa",
+    "set": "010",
+    "cardNumber": "212",
+    "identifier": "212/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/212_7d3dd2991d80ae0ab25cc2a7f7a46ea103329620.jpg",
     "rarity": "EPIC"
   },
   {
@@ -684,6 +2808,60 @@
     "rarity": "EPIC"
   },
   {
+    "name": "Tinker Bell",
+    "set": "010",
+    "cardNumber": "214",
+    "identifier": "214/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/214_d273ef7e75643a6b6b744b57bc63cac9e8def649.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Mulan",
+    "set": "010",
+    "cardNumber": "215",
+    "identifier": "215/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/215_3f9b4e2fbbe6e8bf01f7a7665a4ed49f2b74851c.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Aladdin",
+    "set": "010",
+    "cardNumber": "216",
+    "identifier": "216/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/216_28045a98d207ba73fd5f48a63941745a25d82d79.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Daisy Duck",
+    "set": "010",
+    "cardNumber": "217",
+    "identifier": "217/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/217_e9e22f4094c0918bab08c5be32488d69a0c2dd70.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Kristoff",
+    "set": "010",
+    "cardNumber": "218",
+    "identifier": "218/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/218_cf9acc5de66cf6311286e7d64c5063160f05837a.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Minnie Mouse",
+    "set": "010",
+    "cardNumber": "220",
+    "identifier": "220/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/220_1ba50181ae318cc2fa3cf9cff849a6254c829a9b.jpg",
+    "rarity": "EPIC"
+  },
+  {
     "name": "Robin Hood",
     "set": "010",
     "cardNumber": "221",
@@ -691,6 +2869,15 @@
     "variantId": "Regular",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/221_a59d60cf23311bb932fcc1a3572e975973de9ff7.jpg",
     "rarity": "EPIC"
+  },
+  {
+    "name": "Goofy",
+    "set": "010",
+    "cardNumber": "223",
+    "identifier": "223/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/223_91f040573a2260a617ebd035991c33373701ca1e.jpg",
+    "rarity": "ENCHANTED"
   },
   {
     "name": "Simba",
@@ -702,12 +2889,93 @@
     "rarity": "ENCHANTED"
   },
   {
+    "name": "The Horned King",
+    "set": "010",
+    "cardNumber": "226",
+    "identifier": "226/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/226_edb9219ed07d16b280b56910bf31e953bc2d3044.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
     "name": "Demona",
     "set": "010",
     "cardNumber": "227",
     "identifier": "227/204 EN 10",
     "variantId": "Regular",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/227_cade0c5eceac4422c09c657ab725ca886c638d4a.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Webby Vanderquack",
+    "set": "010",
+    "cardNumber": "229",
+    "identifier": "229/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/229_ce9f26058950468601780162c729d6c7cc2a9bc1.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Baloo",
+    "set": "010",
+    "cardNumber": "230",
+    "identifier": "230/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/230_b72b295dcf60ef9ae3bb0b95d7f4290acbda7723.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "The Headless Horseman",
+    "set": "010",
+    "cardNumber": "232",
+    "identifier": "232/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/232_2765a41e86eb9c1c322c63e52df856dc3c903022.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Lady Tremaine",
+    "set": "010",
+    "cardNumber": "233",
+    "identifier": "233/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/233_4ef3047dde5fba58de5be865ea811ac1745faeab.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Judy Hopps",
+    "set": "010",
+    "cardNumber": "235",
+    "identifier": "235/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/235_ef49880f720fba0c2f56d318389c06af0729e130.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Cinderella",
+    "set": "010",
+    "cardNumber": "236",
+    "identifier": "236/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/236_abdef5f502c738af78297e1ec2f620e3a7463a92.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Goliath",
+    "set": "010",
+    "cardNumber": "238",
+    "identifier": "238/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/238_77b42aa777fedfa20df29da74024e0241389c2f8.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Nick Wilde",
+    "set": "010",
+    "cardNumber": "239",
+    "identifier": "239/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/239_c53adf08577166cab4cbafe8d61c8c5ccce82c5c.jpg",
     "rarity": "ENCHANTED"
   },
   {
@@ -27990,6 +30258,42 @@
     "rarity": "SPECIAL"
   },
   {
+    "name": "Search for Clues",
+    "set": "010",
+    "cardNumber": "026",
+    "identifier": "26/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/26_5f38db004abdc0b007fb4867388f249b4a49ee05.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Search for Clues",
+    "set": "010",
+    "cardNumber": "026",
+    "identifier": "26/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/26_5f38db004abdc0b007fb4867388f249b4a49ee05.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Or Rewrite History!",
+    "set": "010",
+    "cardNumber": "027",
+    "identifier": "27/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/27_9a436571ec3f8e15826b476bbc3e29f51d1c2aa8.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Or Rewrite History!",
+    "set": "010",
+    "cardNumber": "027",
+    "identifier": "27/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/27_9a436571ec3f8e15826b476bbc3e29f51d1c2aa8.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
     "name": "Della's Moon Lullaby",
     "set": "010",
     "cardNumber": "028",
@@ -28005,6 +30309,114 @@
     "identifier": "28/204 EN 10",
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/28_2d2ec053a09707e5f13526eb912a5e43e33a7b31.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "The Horseman Strikes!",
+    "set": "010",
+    "cardNumber": "029",
+    "identifier": "29/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/29_398cd26320fd1903d8291e0e2f7d36cba2c72eb8.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Horseman Strikes!",
+    "set": "010",
+    "cardNumber": "029",
+    "identifier": "29/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/29_398cd26320fd1903d8291e0e2f7d36cba2c72eb8.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Begone!",
+    "set": "010",
+    "cardNumber": "061",
+    "identifier": "61/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/61_a0cb0dea911b87f2eb306d29737dc1f28781f7a8.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Begone!",
+    "set": "010",
+    "cardNumber": "061",
+    "identifier": "61/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/61_a0cb0dea911b87f2eb306d29737dc1f28781f7a8.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Can't Hold It Back Anymore",
+    "set": "010",
+    "cardNumber": "062",
+    "identifier": "62/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/62_6b5c885afc206fc6bd3b715820365e1c88993c89.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Can't Hold It Back Anymore",
+    "set": "010",
+    "cardNumber": "062",
+    "identifier": "62/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/62_6b5c885afc206fc6bd3b715820365e1c88993c89.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Swooping Strike",
+    "set": "010",
+    "cardNumber": "063",
+    "identifier": "63/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/63_63771f9ecb0ab0cfeccccf5a1270ad2c29d2ea4e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Swooping Strike",
+    "set": "010",
+    "cardNumber": "063",
+    "identifier": "63/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/63_63771f9ecb0ab0cfeccccf5a1270ad2c29d2ea4e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Performance Review",
+    "set": "010",
+    "cardNumber": "064",
+    "identifier": "64/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/64_5be6181cf3fe85df178ea17dbd5a3747d8106ecd.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Performance Review",
+    "set": "010",
+    "cardNumber": "064",
+    "identifier": "64/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/64_5be6181cf3fe85df178ea17dbd5a3747d8106ecd.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Fragile as a Flower",
+    "set": "010",
+    "cardNumber": "065",
+    "identifier": "65/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/65_e2303c36ea97c29f4b06eec39d5d9fd48793fd08.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Fragile as a Flower",
+    "set": "010",
+    "cardNumber": "065",
+    "identifier": "65/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/65_e2303c36ea97c29f4b06eec39d5d9fd48793fd08.jpg",
     "rarity": "COMMON"
   },
   {
@@ -28044,6 +30456,42 @@
     "rarity": "RARE"
   },
   {
+    "name": "Chomp!",
+    "set": "010",
+    "cardNumber": "096",
+    "identifier": "96/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/96_8ded4b97c3a9f89c01f8c6fead05897f6845761f.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Chomp!",
+    "set": "010",
+    "cardNumber": "096",
+    "identifier": "96/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/96_8ded4b97c3a9f89c01f8c6fead05897f6845761f.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Malicious, Mean, and Scary",
+    "set": "010",
+    "cardNumber": "097",
+    "identifier": "97/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/97_9373b26c403245a4d79db6a88554d80d3536b666.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Malicious, Mean, and Scary",
+    "set": "010",
+    "cardNumber": "097",
+    "identifier": "97/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/97_9373b26c403245a4d79db6a88554d80d3536b666.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
     "name": "Next Stop, Olympus",
     "set": "010",
     "cardNumber": "129",
@@ -28060,6 +30508,78 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/129_e63d0c254ce7749330b4727a4143b122531c1247.jpg",
     "rarity": "RARE"
+  },
+  {
+    "name": "Get to Safety!",
+    "set": "010",
+    "cardNumber": "130",
+    "identifier": "130/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/130_1757245cc30c853bcdcdaeeaea50773d684841ac.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Get to Safety!",
+    "set": "010",
+    "cardNumber": "130",
+    "identifier": "130/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/130_1757245cc30c853bcdcdaeeaea50773d684841ac.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Time to Go!",
+    "set": "010",
+    "cardNumber": "131",
+    "identifier": "131/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/131_1e6d4cd83d8c5bab74bd6395c858776659519b42.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Time to Go!",
+    "set": "010",
+    "cardNumber": "131",
+    "identifier": "131/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/131_1e6d4cd83d8c5bab74bd6395c858776659519b42.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Ghostly Tale",
+    "set": "010",
+    "cardNumber": "132",
+    "identifier": "132/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/132_58270b994191e8bd0ca6461b5be2c0457ff69dde.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Ghostly Tale",
+    "set": "010",
+    "cardNumber": "132",
+    "identifier": "132/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/132_58270b994191e8bd0ca6461b5be2c0457ff69dde.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Dragon Fire",
+    "set": "010",
+    "cardNumber": "133",
+    "identifier": "133/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/133_bf2cba23db42246962fb0f4313dd941750d99eab.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Dragon Fire",
+    "set": "010",
+    "cardNumber": "133",
+    "identifier": "133/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/133_bf2cba23db42246962fb0f4313dd941750d99eab.jpg",
+    "rarity": "COMMON"
   },
   {
     "name": "Hen Wen's Visions",
@@ -28077,6 +30597,24 @@
     "identifier": "161/204 EN 10",
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/161_d9dbe03fb1b1f961832b851f8261687c607f9b1c.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Promising Lead",
+    "set": "010",
+    "cardNumber": "162",
+    "identifier": "162/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/162_58c2f2abef20189531ce7de84b502f2a4d504428.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Promising Lead",
+    "set": "010",
+    "cardNumber": "162",
+    "identifier": "162/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/162_58c2f2abef20189531ce7de84b502f2a4d504428.jpg",
     "rarity": "COMMON"
   },
   {
@@ -28098,6 +30636,60 @@
     "rarity": "UNCOMMON"
   },
   {
+    "name": "Sudden Scare",
+    "set": "010",
+    "cardNumber": "164",
+    "identifier": "164/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/164_a6d7b9cf07685d86cce7da9095cd265662687a89.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Sudden Scare",
+    "set": "010",
+    "cardNumber": "164",
+    "identifier": "164/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/164_a6d7b9cf07685d86cce7da9095cd265662687a89.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Spooky Sight",
+    "set": "010",
+    "cardNumber": "165",
+    "identifier": "165/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/165_850002a114cf26e39a381404685658c8dd594299.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Spooky Sight",
+    "set": "010",
+    "cardNumber": "165",
+    "identifier": "165/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/165_850002a114cf26e39a381404685658c8dd594299.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "But I'm Much Faster",
+    "set": "010",
+    "cardNumber": "195",
+    "identifier": "195/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/195_d2e67ea24e0086a545dbe966dc347f60af9d4e3e.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "But I'm Much Faster",
+    "set": "010",
+    "cardNumber": "195",
+    "identifier": "195/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/195_d2e67ea24e0086a545dbe966dc347f60af9d4e3e.jpg",
+    "rarity": "COMMON"
+  },
+  {
     "name": "Putting It All Together",
     "set": "010",
     "cardNumber": "196",
@@ -28114,6 +30706,105 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/196_dbf5fda9386b35ca3f926ca02efba6d92d41c7e2.jpg",
     "rarity": "COMMON"
+  },
+  {
+    "name": "He Hurled His Thunderbolt",
+    "set": "010",
+    "cardNumber": "197",
+    "identifier": "197/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/197_ec1eb456aca1ae2049c4278e7e87adef27244bf5.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "He Hurled His Thunderbolt",
+    "set": "010",
+    "cardNumber": "197",
+    "identifier": "197/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/197_ec1eb456aca1ae2049c4278e7e87adef27244bf5.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "The Game's Afoot!",
+    "set": "010",
+    "cardNumber": "198",
+    "identifier": "198/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/198_efe4476ec008c197766c947c9465f4861e6e8544.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "The Game's Afoot!",
+    "set": "010",
+    "cardNumber": "198",
+    "identifier": "198/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/198_efe4476ec008c197766c947c9465f4861e6e8544.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "The Horseman Strikes!",
+    "set": "010",
+    "cardNumber": "207",
+    "identifier": "207/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/207_bcec9c3b633be01dc3a9eef0eb432134ad8b79e6.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Sudden Scare",
+    "set": "010",
+    "cardNumber": "219",
+    "identifier": "219/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/219_2a3af5f25454d0e9fdef4b83a3a310fa14c1c983.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "He Hurled His Thunderbolt",
+    "set": "010",
+    "cardNumber": "222",
+    "identifier": "222/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/222_a46de86b2214bcc286d34d32c069b91eee1fbad4.jpg",
+    "rarity": "EPIC"
+  },
+  {
+    "name": "Can't Hold it Back Anymore",
+    "set": "010",
+    "cardNumber": "228",
+    "identifier": "228/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/228_67bdb5cec6b46b4e800b5ef09e1737f5507c5ab0.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Malicious, Mean, and Scary",
+    "set": "010",
+    "cardNumber": "231",
+    "identifier": "231/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/231_6962c810e4b2d0e5f006bb91eda183a79e4bce54.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Next Stop, Olympus",
+    "set": "010",
+    "cardNumber": "234",
+    "identifier": "234/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/234_6545c078081de97a7ae8b605daa265ebea40d35e.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "Spooky Sight",
+    "set": "010",
+    "cardNumber": "237",
+    "identifier": "237/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/237_0aac51a20896098c6a6b7fbfd1c157d1ccda3eb4.jpg",
+    "rarity": "ENCHANTED"
   },
   {
     "name": "Look at This Family",
@@ -32958,6 +35649,24 @@
     "rarity": "UNCOMMON"
   },
   {
+    "name": "Webby's Diary",
+    "set": "010",
+    "cardNumber": "031",
+    "identifier": "31/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/31_73d58b96719b6dd8168045b526f9ba756d80a611.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Webby's Diary",
+    "set": "010",
+    "cardNumber": "031",
+    "identifier": "31/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/31_73d58b96719b6dd8168045b526f9ba756d80a611.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
     "name": "The Black Cauldron",
     "set": "010",
     "cardNumber": "032",
@@ -32976,6 +35685,78 @@
     "rarity": "LEGENDARY"
   },
   {
+    "name": "Munchings and Crunchings",
+    "set": "010",
+    "cardNumber": "033",
+    "identifier": "33/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/33_94a53d206cb624f68f56af6c12e9f2ddc0572e59.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Munchings and Crunchings",
+    "set": "010",
+    "cardNumber": "033",
+    "identifier": "33/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/33_94a53d206cb624f68f56af6c12e9f2ddc0572e59.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Junior Woodchuck Guidebook",
+    "set": "010",
+    "cardNumber": "066",
+    "identifier": "66/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/66_8aa876cfe4969537e6702cacf04067e8b4f6abe3.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Junior Woodchuck Guidebook",
+    "set": "010",
+    "cardNumber": "066",
+    "identifier": "66/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/66_8aa876cfe4969537e6702cacf04067e8b4f6abe3.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Grimorum Arcanorum",
+    "set": "010",
+    "cardNumber": "067",
+    "identifier": "67/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/67_82a2fcee7e949bc292fc98606bf14961e16f2bcd.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Grimorum Arcanorum",
+    "set": "010",
+    "cardNumber": "067",
+    "identifier": "67/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/67_82a2fcee7e949bc292fc98606bf14961e16f2bcd.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Potion of Malice",
+    "set": "010",
+    "cardNumber": "098",
+    "identifier": "98/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/98_5f28612ce32e758bf3c42a761930802d62f5fede.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Potion of Malice",
+    "set": "010",
+    "cardNumber": "098",
+    "identifier": "98/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/98_5f28612ce32e758bf3c42a761930802d62f5fede.jpg",
+    "rarity": "SUPER"
+  },
+  {
     "name": "Inscrutable Map",
     "set": "010",
     "cardNumber": "099",
@@ -32992,6 +35773,204 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/99_f551cf766bf535c15cdd2350a297e51b6ea36d9d.jpg",
     "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Enigmatic Inkcaster",
+    "set": "010",
+    "cardNumber": "100",
+    "identifier": "100/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/100_472404a20966009947145a60c9a946e8d59fc624.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Enigmatic Inkcaster",
+    "set": "010",
+    "cardNumber": "100",
+    "identifier": "100/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/100_472404a20966009947145a60c9a946e8d59fc624.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Blessed Bagpipes",
+    "set": "010",
+    "cardNumber": "101",
+    "identifier": "101/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/101_c8f092fee1ec7886f79815fa62538cc4785e3e7f.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Blessed Bagpipes",
+    "set": "010",
+    "cardNumber": "101",
+    "identifier": "101/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/101_c8f092fee1ec7886f79815fa62538cc4785e3e7f.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Mushu's Rocket",
+    "set": "010",
+    "cardNumber": "134",
+    "identifier": "134/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/134_b2909d2b7f6598632d71b96d98332ea5720118bb.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Mushu's Rocket",
+    "set": "010",
+    "cardNumber": "134",
+    "identifier": "134/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/134_b2909d2b7f6598632d71b96d98332ea5720118bb.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Detective's Badge",
+    "set": "010",
+    "cardNumber": "166",
+    "identifier": "166/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/166_8edffd0fa57df4bed9ea1cf0186cd46efc231477.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Detective's Badge",
+    "set": "010",
+    "cardNumber": "166",
+    "identifier": "166/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/166_8edffd0fa57df4bed9ea1cf0186cd46efc231477.jpg",
+    "rarity": "COMMON"
+  },
+  {
+    "name": "Ink Amplifier",
+    "set": "010",
+    "cardNumber": "167",
+    "identifier": "167/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/167_f0e851b21936fe850c834ed7ea5acaab0514f6d6.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Ink Amplifier",
+    "set": "010",
+    "cardNumber": "167",
+    "identifier": "167/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/167_f0e851b21936fe850c834ed7ea5acaab0514f6d6.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Fairy Godmother's Wand",
+    "set": "010",
+    "cardNumber": "168",
+    "identifier": "168/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/168_2ffd615fb5ff9a48298ef98f9fc22d6d0ab8f1bf.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Fairy Godmother's Wand",
+    "set": "010",
+    "cardNumber": "168",
+    "identifier": "168/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/168_2ffd615fb5ff9a48298ef98f9fc22d6d0ab8f1bf.jpg",
+    "rarity": "SUPER"
+  },
+  {
+    "name": "Inkrunner",
+    "set": "010",
+    "cardNumber": "169",
+    "identifier": "169/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/169_bc1aa6c1102b14e98f2a6082c64f2ac7f2d1477e.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Inkrunner",
+    "set": "010",
+    "cardNumber": "169",
+    "identifier": "169/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/169_bc1aa6c1102b14e98f2a6082c64f2ac7f2d1477e.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "The Robot Queen",
+    "set": "010",
+    "cardNumber": "199",
+    "identifier": "199/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/199_9e010c2c1e85b71f94413741cda972228d6660c9.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "The Robot Queen",
+    "set": "010",
+    "cardNumber": "199",
+    "identifier": "199/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/199_9e010c2c1e85b71f94413741cda972228d6660c9.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "The Sword of Hercules",
+    "set": "010",
+    "cardNumber": "200",
+    "identifier": "200/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/200_19f755e16019eb17dda0e4c3b7d1652cdfb94b9e.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Sword of Hercules",
+    "set": "010",
+    "cardNumber": "200",
+    "identifier": "200/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/200_19f755e16019eb17dda0e4c3b7d1652cdfb94b9e.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Ingenious Device",
+    "set": "010",
+    "cardNumber": "201",
+    "identifier": "201/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/201_1f928feb4a755d133120ab88542223f84161b05f.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Ingenious Device",
+    "set": "010",
+    "cardNumber": "201",
+    "identifier": "201/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/201_1f928feb4a755d133120ab88542223f84161b05f.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Black Cauldron",
+    "set": "010",
+    "cardNumber": "225",
+    "identifier": "225/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/225_93a72dee2c81ec12a40403a1cec156d8beed79b5.jpg",
+    "rarity": "ENCHANTED"
+  },
+  {
+    "name": "The Sword of Hercules",
+    "set": "010",
+    "cardNumber": "240",
+    "identifier": "240/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/240_dbdd57190bb4ce914e7c3807af4481ea72990538.jpg",
+    "rarity": "ENCHANTED"
   },
   {
     "name": "Lantern",
@@ -35793,6 +38772,24 @@
     "rarity": "RARE"
   },
   {
+    "name": "Duckburg",
+    "set": "010",
+    "cardNumber": "034",
+    "identifier": "34/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/34_aae90f85ffe62e07885ad6907a7fcd69caf6a61a.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Duckburg",
+    "set": "010",
+    "cardNumber": "034",
+    "identifier": "34/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/34_aae90f85ffe62e07885ad6907a7fcd69caf6a61a.jpg",
+    "rarity": "RARE"
+  },
+  {
     "name": "The Great Illuminary",
     "set": "010",
     "cardNumber": "068",
@@ -35811,6 +38808,78 @@
     "rarity": "UNCOMMON"
   },
   {
+    "name": "White Agony Plains",
+    "set": "010",
+    "cardNumber": "102",
+    "identifier": "102/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/102_545174a8fda3087e37722bee84ef2e4cb1bdc837.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "White Agony Plains",
+    "set": "010",
+    "cardNumber": "102",
+    "identifier": "102/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/102_545174a8fda3087e37722bee84ef2e4cb1bdc837.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Bitterwood",
+    "set": "010",
+    "cardNumber": "135",
+    "identifier": "135/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/135_9f6b9ccc917fb97b1ddfffc5c61d740e7ac9ceed.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "The Bitterwood",
+    "set": "010",
+    "cardNumber": "135",
+    "identifier": "135/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/135_9f6b9ccc917fb97b1ddfffc5c61d740e7ac9ceed.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Sleepy Hollow",
+    "set": "010",
+    "cardNumber": "136",
+    "identifier": "136/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/136_7dccedc7afb4ae2978df973bbee0b40ea84eaf47.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Sleepy Hollow",
+    "set": "010",
+    "cardNumber": "136",
+    "identifier": "136/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/136_7dccedc7afb4ae2978df973bbee0b40ea84eaf47.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Castle of the Horned King",
+    "set": "010",
+    "cardNumber": "170",
+    "identifier": "170/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/170_aca508dd9b8faeb2678bda497fa8eb247ea29b0e.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Castle of the Horned King",
+    "set": "010",
+    "cardNumber": "170",
+    "identifier": "170/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/170_aca508dd9b8faeb2678bda497fa8eb247ea29b0e.jpg",
+    "rarity": "RARE"
+  },
+  {
     "name": "Illuminary Tunnels",
     "set": "010",
     "cardNumber": "202",
@@ -35827,6 +38896,42 @@
     "variantId": "Foiled",
     "url": "https://api.lorcana.ravensburger.com/images/en/set10/202_6400e1ce6644557526c81df3b3ea7989dfd89e6e.jpg",
     "rarity": "SUPER"
+  },
+  {
+    "name": "Zootopia",
+    "set": "010",
+    "cardNumber": "203",
+    "identifier": "203/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/203_1af503e1ad98599f71dfa497348bc406f90d2616.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Zootopia",
+    "set": "010",
+    "cardNumber": "203",
+    "identifier": "203/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/203_1af503e1ad98599f71dfa497348bc406f90d2616.jpg",
+    "rarity": "UNCOMMON"
+  },
+  {
+    "name": "Castle Wyvern",
+    "set": "010",
+    "cardNumber": "204",
+    "identifier": "204/204 EN 10",
+    "variantId": "Regular",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/204_52b4323e1046b2289129684c5ae196036c4a3a37.jpg",
+    "rarity": "RARE"
+  },
+  {
+    "name": "Castle Wyvern",
+    "set": "010",
+    "cardNumber": "204",
+    "identifier": "204/204 EN 10",
+    "variantId": "Foiled",
+    "url": "https://api.lorcana.ravensburger.com/images/en/set10/204_52b4323e1046b2289129684c5ae196036c4a3a37.jpg",
+    "rarity": "RARE"
   },
   {
     "name": "Atlantica",

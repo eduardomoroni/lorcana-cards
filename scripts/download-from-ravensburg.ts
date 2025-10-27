@@ -237,14 +237,9 @@ async function program(): Promise<void> {
     // Check if we should only create the mapping
     const mapOnly = process.argv.includes("--map-only");
     
-    // Create or load mapping
-    let mapping: MappingEntry[];
-    if (fs.existsSync(MAPPING_OUTPUT_PATH)) {
-      console.log(`Loading existing mapping from ${MAPPING_OUTPUT_PATH}...`);
-      mapping = JSON.parse(fs.readFileSync(MAPPING_OUTPUT_PATH, "utf-8"));
-    } else {
-      mapping = createMapping();
-    }
+    // Always regenerate mapping from the latest catalog
+    console.log(`Generating fresh mapping from catalog...`);
+    const mapping = createMapping();
     
     if (mapOnly) {
       console.log(

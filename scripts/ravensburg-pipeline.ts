@@ -355,6 +355,35 @@ async function runPipeline(): Promise<void> {
     }
   }
 
+  // Clean up any remaining JPG files in the output directory
+  console.log("\n🧹 Cleaning up JPG files in output directory...");
+  const outputDir = `${rootFolder}/EN/010`;
+  if (fs.existsSync(outputDir)) {
+    const outputFiles = fs.readdirSync(outputDir);
+    const jpgFiles = outputFiles.filter(
+      (f) => f.toLowerCase().endsWith(".jpg") || f.toLowerCase().endsWith(".jpeg")
+    );
+    
+    let deletedJpgs = 0;
+    for (const jpgFile of jpgFiles) {
+      const jpgPath = path.join(outputDir, jpgFile);
+      const basePath = jpgPath.replace(/\.(jpg|jpeg)$/i, "");
+      
+      // Only delete if both WebP and AVIF versions exist
+      if (fs.existsSync(`${basePath}.webp`) && fs.existsSync(`${basePath}.avif`)) {
+        fs.unlinkSync(jpgPath);
+        console.log(`  Deleted: ${jpgFile}`);
+        deletedJpgs++;
+      }
+    }
+    
+    if (deletedJpgs > 0) {
+      console.log(`✅ Deleted ${deletedJpgs} JPG files`);
+    } else {
+      console.log(`No JPG files to clean up`);
+    }
+  }
+
   // Generate report
   const endTime = Date.now();
   const endTimeStr = new Date().toISOString();

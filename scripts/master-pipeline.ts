@@ -17,6 +17,11 @@ const steps: PipelineStep[] = [
     script: "scripts/ravensburg-pipeline.ts",
   },
   {
+    name: "Cleanup JPG files",
+    script: "scripts/cleanup-jpg.ts",
+    args: ["010"],
+  },
+  {
     name: "Validate Images",
     script: "scripts/validate-images.ts",
   },
