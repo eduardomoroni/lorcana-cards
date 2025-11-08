@@ -1,9 +1,11 @@
 // Image validation module
 // Validates image dimensions, format, integrity, and checks for missing pairs
+// Also validates cropped variants (art-only and art+name)
 
 import fs from "fs";
 import sharp from "sharp";
 import path from "path";
+import { getExpectedCroppedDimensions } from "./crop.js";
 
 export interface ValidationResult {
   filePath: string;
@@ -15,12 +17,23 @@ export interface ValidationResult {
   error?: string;
 }
 
-export interface CardValidation {
-  cardNumber: string;
+export interface CroppedValidation {
   webp?: ValidationResult;
   avif?: ValidationResult;
   hasBothFormats: boolean;
   isValid: boolean;
+}
+
+export interface CardValidation {
+  cardNumber: string;
+  // Full card
+  webp?: ValidationResult;
+  avif?: ValidationResult;
+  hasBothFormats: boolean;
+  isValid: boolean;
+  // Cropped variants
+  artOnly?: CroppedValidation;
+  artAndName?: CroppedValidation;
 }
 
 export interface ValidationReport {
@@ -34,6 +47,11 @@ export interface ValidationReport {
   missingAvif: number;
   invalidDimensions: number;
   corruptedFiles: number;
+  // Cropped variant stats
+  missingArtOnly: number;
+  missingArtAndName: number;
+  invalidArtOnly: number;
+  invalidArtAndName: number;
   cards: CardValidation[];
   timestamp: string;
 }
@@ -117,11 +135,104 @@ function findExpectedCards(
 }
 
 /**
- * Validate a card (both WebP and AVIF)
+ * Validate a single image file with custom dimensions
+ */
+async function validateImageWithDimensions(
+  filePath: string,
+  expectedWidth: number,
+  expectedHeight: number
+): Promise<ValidationResult> {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return {
+        filePath,
+        valid: false,
+        error: "File does not exist",
+      };
+    }
+
+    const stats = fs.statSync(filePath);
+    const metadata = await sharp(filePath).metadata();
+
+    const isValidDimensions =
+      metadata.width === expectedWidth && metadata.height === expectedHeight;
+
+    return {
+      filePath,
+      valid: isValidDimensions,
+      width: metadata.width,
+      height: metadata.height,
+      format: metadata.format,
+      size: stats.size,
+      error: isValidDimensions
+        ? undefined
+        : `Invalid dimensions: ${metadata.width}x${metadata.height} (expected ${expectedWidth}x${expectedHeight})`,
+    };
+  } catch (error) {
+    return {
+      filePath,
+      valid: false,
+      error: `Corrupted or invalid file: ${(error as Error).message}`,
+    };
+  }
+}
+
+/**
+ * Validate cropped variant (art-only or art+name)
+ */
+async function validateCroppedVariant(
+  variantDir: string,
+  cardNumber: string,
+  expectedDimensions: { width: number; height: number }
+): Promise<CroppedValidation> {
+  const webpPath = path.join(variantDir, `${cardNumber}.webp`);
+  const avifPath = path.join(variantDir, `${cardNumber}.avif`);
+
+  const webpExists = fs.existsSync(webpPath);
+  const avifExists = fs.existsSync(avifPath);
+
+  let webpResult: ValidationResult | undefined;
+  let avifResult: ValidationResult | undefined;
+
+  if (webpExists) {
+    webpResult = await validateImageWithDimensions(
+      webpPath,
+      expectedDimensions.width,
+      expectedDimensions.height
+    );
+  }
+
+  if (avifExists) {
+    avifResult = await validateImageWithDimensions(
+      avifPath,
+      expectedDimensions.width,
+      expectedDimensions.height
+    );
+  }
+
+  const hasBothFormats = webpExists && avifExists;
+  const isValid =
+    hasBothFormats &&
+    webpResult?.valid === true &&
+    avifResult?.valid === true;
+
+  return {
+    webp: webpResult,
+    avif: avifResult,
+    hasBothFormats,
+    isValid,
+  };
+}
+
+/**
+ * Validate a card (full card + cropped variants)
  */
 export async function validateCard(
   setDir: string,
-  cardNumber: string
+  cardNumber: string,
+  rootFolder?: string,
+  set?: string,
+  language?: string
 ): Promise<CardValidation> {
   const webpPath = path.join(setDir, `${cardNumber}.webp`);
   const avifPath = path.join(setDir, `${cardNumber}.avif`);
@@ -146,17 +257,43 @@ export async function validateCard(
     webpResult?.valid === true &&
     avifResult?.valid === true;
 
+  // Validate cropped variants if paths provided
+  let artOnly: CroppedValidation | undefined;
+  let artAndName: CroppedValidation | undefined;
+
+  if (rootFolder && set && language) {
+    const expectedDims = getExpectedCroppedDimensions();
+
+    // Art-only variant (shared across languages in set/art_only/)
+    const artOnlyDir = path.join(rootFolder, set, "art_only");
+    artOnly = await validateCroppedVariant(
+      artOnlyDir,
+      cardNumber,
+      expectedDims.artOnly
+    );
+
+    // Art+name variant (language-specific in language/set/art_and_name/)
+    const artAndNameDir = path.join(setDir, "art_and_name");
+    artAndName = await validateCroppedVariant(
+      artAndNameDir,
+      cardNumber,
+      expectedDims.artAndName
+    );
+  }
+
   return {
     cardNumber,
     webp: webpResult,
     avif: avifResult,
     hasBothFormats,
     isValid,
+    artOnly,
+    artAndName,
   };
 }
 
 /**
- * Validate all cards in a set
+ * Validate all cards in a set (including cropped variants)
  */
 export async function validateSet(
   rootFolder: string,
@@ -176,6 +313,10 @@ export async function validateSet(
   let missingAvif = 0;
   let invalidDimensions = 0;
   let corruptedFiles = 0;
+  let missingArtOnly = 0;
+  let missingArtAndName = 0;
+  let invalidArtOnly = 0;
+  let invalidArtAndName = 0;
 
   for (let i = 0; i < cardNumbers.length; i++) {
     const cardNumber = cardNumbers[i];
@@ -184,7 +325,13 @@ export async function validateSet(
       onProgress(i + 1, cardNumbers.length, cardNumber);
     }
 
-    const validation = await validateCard(setDir, cardNumber);
+    const validation = await validateCard(
+      setDir,
+      cardNumber,
+      rootFolder,
+      set,
+      language
+    );
     cardValidations.push(validation);
 
     if (validation.isValid) {
@@ -220,6 +367,23 @@ export async function validateSet(
         }
       }
     }
+
+    // Count cropped variant issues
+    if (validation.artOnly && !validation.artOnly.isValid) {
+      if (!validation.artOnly.webp && !validation.artOnly.avif) {
+        missingArtOnly++;
+      } else {
+        invalidArtOnly++;
+      }
+    }
+
+    if (validation.artAndName && !validation.artAndName.isValid) {
+      if (!validation.artAndName.webp && !validation.artAndName.avif) {
+        missingArtAndName++;
+      } else {
+        invalidArtAndName++;
+      }
+    }
   }
 
   return {
@@ -233,18 +397,27 @@ export async function validateSet(
     missingAvif,
     invalidDimensions,
     corruptedFiles,
+    missingArtOnly,
+    missingArtAndName,
+    invalidArtOnly,
+    invalidArtAndName,
     cards: cardValidations,
     timestamp: new Date().toISOString(),
   };
 }
 
 /**
- * Get cards that need fixing
+ * Get cards that need fixing (including cropped variants)
  */
 export function getCardsNeedingFix(
   report: ValidationReport
 ): CardValidation[] {
-  return report.cards.filter((card) => !card.isValid);
+  return report.cards.filter(
+    (card) =>
+      !card.isValid ||
+      (card.artOnly && !card.artOnly.isValid) ||
+      (card.artAndName && !card.artAndName.isValid)
+  );
 }
 
 /**
@@ -280,6 +453,7 @@ export function printSummary(report: ValidationReport): void {
   console.log(`Set:                   ${report.set}`);
   console.log(`Language:              ${report.language}`);
   console.log(`Total cards:           ${report.totalCards}`);
+  console.log(`\n[Full Cards]`);
   console.log(`Valid cards:           ${report.validCards}`);
   console.log(`Invalid cards:         ${report.invalidCards}`);
   console.log(`Missing cards:         ${report.missingCards}`);
@@ -287,12 +461,24 @@ export function printSummary(report: ValidationReport): void {
   console.log(`Missing AVIF only:     ${report.missingAvif}`);
   console.log(`Invalid dimensions:    ${report.invalidDimensions}`);
   console.log(`Corrupted files:       ${report.corruptedFiles}`);
+  console.log(`\n[Cropped Variants]`);
+  console.log(`Missing art-only:      ${report.missingArtOnly}`);
+  console.log(`Missing art+name:      ${report.missingArtAndName}`);
+  console.log(`Invalid art-only:      ${report.invalidArtOnly}`);
+  console.log(`Invalid art+name:      ${report.invalidArtAndName}`);
   console.log("=".repeat(60));
 
-  if (report.invalidCards === 0) {
+  const totalIssues =
+    report.invalidCards +
+    report.missingArtOnly +
+    report.missingArtAndName +
+    report.invalidArtOnly +
+    report.invalidArtAndName;
+
+  if (totalIssues === 0) {
     console.log("\n✅ All images are valid!");
   } else {
-    console.log(`\n⚠️  Found ${report.invalidCards} issues`);
+    console.log(`\n⚠️  Found ${totalIssues} total issues`);
   }
 }
 

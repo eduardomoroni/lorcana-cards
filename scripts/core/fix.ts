@@ -1,5 +1,6 @@
 // Auto-fix module
 // Fixes issues found during validation
+// Includes cropping to generate art-only and art+name variants
 
 import fs from "fs";
 import path from "path";
@@ -11,12 +12,19 @@ import {
 } from "./validate.js";
 import { downloadCard, CardInfo } from "./download.js";
 import { transformCard, cleanupSource } from "./transform.js";
+import { cropCard } from "./crop.js";
 
 export interface FixResult {
   cardNumber: string;
   success: boolean;
-  action: "downloaded" | "transformed" | "skipped" | "failed";
+  action:
+    | "downloaded"
+    | "transformed"
+    | "cropped"
+    | "skipped"
+    | "failed";
   error?: string;
+  croppedVariants?: boolean;
 }
 
 export interface FixOptions {
@@ -28,7 +36,7 @@ export interface FixOptions {
 }
 
 /**
- * Fix a single card
+ * Fix a single card (including cropped variants)
  */
 export async function fixCard(
   card: CardValidation,
@@ -36,6 +44,7 @@ export async function fixCard(
 ): Promise<FixResult> {
   const { rootFolder, set, language } = options;
   const outputDir = path.join(rootFolder, language, set);
+  let croppedVariants = false;
 
   // Case 1: Both files missing - need to download and transform
   if (!card.webp && !card.avif) {
@@ -77,10 +86,15 @@ export async function fixCard(
       };
     }
 
+    // Generate cropped variants
+    await generateCroppedVariants(card, rootFolder, set, language);
+    croppedVariants = true;
+
     return {
       cardNumber: card.cardNumber,
       success: true,
       action: "downloaded",
+      croppedVariants,
     };
   }
 
@@ -107,18 +121,25 @@ export async function fixCard(
       };
     }
 
+    // Generate cropped variants if they're missing
+    const needsCropping =
+      (card.artOnly && !card.artOnly.isValid) ||
+      (card.artAndName && !card.artAndName.isValid);
+    if (needsCropping) {
+      await generateCroppedVariants(card, rootFolder, set, language);
+      croppedVariants = true;
+    }
+
     return {
       cardNumber: card.cardNumber,
       success: true,
       action: "transformed",
+      croppedVariants,
     };
   }
 
   // Case 3: Both exist but have invalid dimensions - re-download and transform
-  if (
-    (card.webp && !card.webp.valid) ||
-    (card.avif && !card.avif.valid)
-  ) {
+  if ((card.webp && !card.webp.valid) || (card.avif && !card.avif.valid)) {
     const cardInfo: CardInfo = {
       set,
       cardNumber: card.cardNumber,
@@ -157,10 +178,45 @@ export async function fixCard(
       };
     }
 
+    // Generate cropped variants
+    await generateCroppedVariants(card, rootFolder, set, language);
+    croppedVariants = true;
+
     return {
       cardNumber: card.cardNumber,
       success: true,
       action: "downloaded",
+      croppedVariants,
+    };
+  }
+
+  // Case 4: Full card is valid but cropped variants need fixing
+  const needsCropping =
+    (card.artOnly && !card.artOnly.isValid) ||
+    (card.artAndName && !card.artAndName.isValid);
+
+  if (needsCropping) {
+    const cropResult = await generateCroppedVariants(
+      card,
+      rootFolder,
+      set,
+      language
+    );
+
+    if (!cropResult) {
+      return {
+        cardNumber: card.cardNumber,
+        success: false,
+        action: "failed",
+        error: "Failed to generate cropped variants",
+      };
+    }
+
+    return {
+      cardNumber: card.cardNumber,
+      success: true,
+      action: "cropped",
+      croppedVariants: true,
     };
   }
 
@@ -169,6 +225,42 @@ export async function fixCard(
     success: true,
     action: "skipped",
   };
+}
+
+/**
+ * Generate cropped variants for a card
+ */
+async function generateCroppedVariants(
+  card: CardValidation,
+  rootFolder: string,
+  set: string,
+  language: string
+): Promise<boolean> {
+  const outputDir = path.join(rootFolder, language, set);
+  const webpPath = path.join(outputDir, `${card.cardNumber}.webp`);
+  const avifPath = path.join(outputDir, `${card.cardNumber}.avif`);
+
+  // Verify source files exist
+  if (!fs.existsSync(webpPath) || !fs.existsSync(avifPath)) {
+    return false;
+  }
+
+  try {
+    await cropCard(
+      webpPath,
+      avifPath,
+      outputDir,
+      card.cardNumber,
+      set,
+      language
+    );
+    return true;
+  } catch (error) {
+    console.error(
+      `Error cropping card ${card.cardNumber}: ${(error as Error).message}`
+    );
+    return false;
+  }
 }
 
 /**
@@ -217,7 +309,9 @@ export function generateFixSummary(results: FixResult[]): {
   failed: number;
   downloaded: number;
   transformed: number;
+  cropped: number;
   skipped: number;
+  croppedVariants: number;
 } {
   return {
     total: results.length,
@@ -225,7 +319,9 @@ export function generateFixSummary(results: FixResult[]): {
     failed: results.filter((r) => !r.success).length,
     downloaded: results.filter((r) => r.action === "downloaded").length,
     transformed: results.filter((r) => r.action === "transformed").length,
+    cropped: results.filter((r) => r.action === "cropped").length,
     skipped: results.filter((r) => r.action === "skipped").length,
+    croppedVariants: results.filter((r) => r.croppedVariants).length,
   };
 }
 
@@ -243,7 +339,9 @@ export function printFixSummary(results: FixResult[]): void {
   console.log(`Failed:                ${summary.failed}`);
   console.log(`Downloaded:            ${summary.downloaded}`);
   console.log(`Transformed:           ${summary.transformed}`);
+  console.log(`Cropped only:          ${summary.cropped}`);
   console.log(`Skipped:               ${summary.skipped}`);
+  console.log(`With cropped variants: ${summary.croppedVariants}`);
   console.log("=".repeat(60));
 
   if (summary.failed === 0) {

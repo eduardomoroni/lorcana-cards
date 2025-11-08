@@ -168,8 +168,16 @@ async function runForLanguage(
   );
   console.log(`\n📄 Validation report saved: ${reportPath}`);
 
+  // Check if any issues found (full cards or cropped variants)
+  const totalIssues =
+    validationReport.invalidCards +
+    validationReport.missingArtOnly +
+    validationReport.missingArtAndName +
+    validationReport.invalidArtOnly +
+    validationReport.invalidArtAndName;
+
   // If no issues found, we're done
-  if (validationReport.invalidCards === 0) {
+  if (totalIssues === 0) {
     return true;
   }
 
