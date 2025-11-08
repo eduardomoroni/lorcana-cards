@@ -4,14 +4,14 @@
 
 import fs from "fs";
 import path from "path";
-import { validateSet, printSummary, saveReport } from "./core/validate.js";
+import { validateSet, printSummary, saveReport } from "./core/validate";
 import {
   fixCards,
   printFixSummary,
   saveFixReport,
   FixOptions,
-} from "./core/fix.js";
-import { cleanupJpgFiles } from "./core/transform.js";
+} from "./core/fix";
+import { cleanupJpgFiles } from "./core/transform";
 
 interface PipelineConfig {
   set: string;
@@ -23,7 +23,7 @@ interface PipelineConfig {
   expectedRange?: { start: number; end: number };
 }
 
-const VALID_LANGUAGES = ["EN", "DE", "FR", "IT", "JA", "ZH"];
+const VALID_LANGUAGES = ["EN", "DE", "FR", "IT"];
 
 /**
  * Parse command line arguments
