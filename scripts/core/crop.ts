@@ -104,6 +104,8 @@ async function cropImage(
 
 /**
  * Create both art-only and art+name variants for a card
+ * Art-only is language-agnostic (no text) - only generate if missing
+ * Art+name is language-specific (includes text) - always generate for each language
  */
 export async function cropCard(
   sourceWebpPath: string,
@@ -141,11 +143,14 @@ export async function cropCard(
     const artAndNameWebp = path.join(artAndNameDir, `${cardNumber}.webp`);
     const artAndNameAvif = path.join(artAndNameDir, `${cardNumber}.avif`);
 
-    // Crop art-only variants
-    await cropImage(sourceWebpPath, artOnlyWebp, true);
-    await cropImage(sourceAvifPath, artOnlyAvif, true);
+    // Crop art-only variants ONLY if they don't exist (language-agnostic)
+    const artOnlyExists = fs.existsSync(artOnlyWebp) && fs.existsSync(artOnlyAvif);
+    if (!artOnlyExists) {
+      await cropImage(sourceWebpPath, artOnlyWebp, true);
+      await cropImage(sourceAvifPath, artOnlyAvif, true);
+    }
 
-    // Crop art+name variants
+    // Always crop art+name variants (language-specific)
     await cropImage(sourceWebpPath, artAndNameWebp, false);
     await cropImage(sourceAvifPath, artAndNameAvif, false);
 

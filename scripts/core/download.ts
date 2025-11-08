@@ -71,25 +71,114 @@ function downloadFile(url: string, filepath: string): Promise<string> {
   });
 }
 
+interface CatalogCard {
+  name: string;
+  card_sets: string[];
+  card_identifier: string;
+  variants: Array<{
+    variant_id: string;
+    detail_image_url: string;
+  }>;
+  rarity: string;
+}
+
+interface Catalog {
+  cards: {
+    characters?: CatalogCard[];
+    actions?: CatalogCard[];
+    items?: CatalogCard[];
+    locations?: CatalogCard[];
+  };
+}
+
 /**
- * Load Ravensburger mapping
+ * Extract set number from card_sets array
  */
-function loadRavensburgMapping(): RavensburgMappingEntry[] | null {
-  const mappingPath = path.join(
+function extractSetNumber(cardSets: string[]): string | null {
+  if (!cardSets || cardSets.length === 0) return null;
+  
+  const cardSet = cardSets[0];
+  
+  if (cardSet.startsWith("set")) {
+    const setNum = cardSet.replace("set", "");
+    return setNum.padStart(3, "0");
+  }
+  
+  return null;
+}
+
+/**
+ * Extract card number from card_identifier
+ */
+function extractCardNumber(cardIdentifier: string): string | null {
+  if (!cardIdentifier) return null;
+  const match = cardIdentifier.match(/^(\d+)\//);
+  return match ? match[1].padStart(3, "0") : null;
+}
+
+/**
+ * Load Ravensburger catalog and generate mapping for specific language
+ */
+function loadRavensburgMapping(language: string): RavensburgMappingEntry[] | null {
+  const catalogPath = path.join(
     process.cwd(),
     "scripts",
     "data",
-    "ravensburg-mapping.json"
+    "catalogs",
+    `${language.toLowerCase()}.json`
   );
 
-  if (!fs.existsSync(mappingPath)) {
+  if (!fs.existsSync(catalogPath)) {
+    console.warn(`Catalog not found for language ${language}: ${catalogPath}`);
     return null;
   }
 
   try {
-    return JSON.parse(fs.readFileSync(mappingPath, "utf-8"));
+    const catalog: Catalog = JSON.parse(fs.readFileSync(catalogPath, "utf-8"));
+    const mapping: RavensburgMappingEntry[] = [];
+
+    if (!catalog.cards) {
+      return null;
+    }
+
+    // Combine all card types
+    const allCards: CatalogCard[] = [
+      ...(catalog.cards.characters || []),
+      ...(catalog.cards.actions || []),
+      ...(catalog.cards.items || []),
+      ...(catalog.cards.locations || []),
+    ];
+
+    for (const card of allCards) {
+      const setNumber = extractSetNumber(card.card_sets);
+      const cardNumber = extractCardNumber(card.card_identifier);
+
+      if (!setNumber || !cardNumber) {
+        continue;
+      }
+
+      // Process Regular variant only
+      if (card.variants && Array.isArray(card.variants)) {
+        for (const variant of card.variants) {
+          if (variant.variant_id === "Regular" && variant.detail_image_url) {
+            mapping.push({
+              name: card.name,
+              set: setNumber,
+              cardNumber: cardNumber,
+              identifier: card.card_identifier,
+              variantId: variant.variant_id,
+              url: variant.detail_image_url,
+              rarity: card.rarity,
+            });
+            break; // Only use Regular variant
+          }
+        }
+      }
+    }
+
+    return mapping;
   } catch (error) {
-    console.error("Error loading Ravensburg mapping:", error);
+    console.error(`Error loading catalog for ${language}:`, error);
     return null;
   }
 }
@@ -274,8 +363,8 @@ export async function downloadCard(
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  // Try Ravensburger first
-  const ravensburgMapping = loadRavensburgMapping();
+  // Try Ravensburger first (language-specific catalog)
+  const ravensburgMapping = loadRavensburgMapping(card.language);
   if (ravensburgMapping) {
     const ravensburgEntry = findInRavensburg(card, ravensburgMapping);
     if (ravensburgEntry) {

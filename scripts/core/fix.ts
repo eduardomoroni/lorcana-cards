@@ -229,6 +229,8 @@ export async function fixCard(
 
 /**
  * Generate cropped variants for a card
+ * Art-only is language-agnostic (no text) and shared across all languages
+ * Art+name is language-specific and generated for each language
  */
 async function generateCroppedVariants(
   card: CardValidation,
@@ -245,15 +247,35 @@ async function generateCroppedVariants(
     return false;
   }
 
+  // Check if art-only already exists (language-agnostic, don't regenerate)
+  const artOnlyDir = path.join(rootFolder, set, "art_only");
+  const artOnlyWebp = path.join(artOnlyDir, `${card.cardNumber}.webp`);
+  const artOnlyAvif = path.join(artOnlyDir, `${card.cardNumber}.avif`);
+  const artOnlyExists = fs.existsSync(artOnlyWebp) && fs.existsSync(artOnlyAvif);
+
+  // Check if art+name needs generating (language-specific)
+  const artAndNameDir = path.join(outputDir, "art_and_name");
+  const artAndNameWebp = path.join(artAndNameDir, `${card.cardNumber}.webp`);
+  const artAndNameAvif = path.join(artAndNameDir, `${card.cardNumber}.avif`);
+  const artAndNameExists = fs.existsSync(artAndNameWebp) && fs.existsSync(artAndNameAvif);
+
+  // If both exist, nothing to do
+  if (artOnlyExists && artAndNameExists) {
+    return true;
+  }
+
   try {
-    await cropCard(
-      webpPath,
-      avifPath,
-      outputDir,
-      card.cardNumber,
-      set,
-      language
-    );
+    // Only generate what's missing
+    if (!artOnlyExists || !artAndNameExists) {
+      await cropCard(
+        webpPath,
+        avifPath,
+        outputDir,
+        card.cardNumber,
+        set,
+        language
+      );
+    }
     return true;
   } catch (error) {
     console.error(
